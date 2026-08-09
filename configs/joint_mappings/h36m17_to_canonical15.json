@@ -1,0 +1,42 @@
+{
+  "source_name": "human36m_challenge_17",
+  "target_name": "canonical_15j_v1",
+  "source_joint_names": [
+    "Pelvis",
+    "RHip",
+    "RKnee",
+    "RAnkle",
+    "LHip",
+    "LKnee",
+    "LAnkle",
+    "Spine1",
+    "Neck",
+    "Head",
+    "Site",
+    "LShoulder",
+    "LElbow",
+    "LWrist",
+    "RShoulder",
+    "RElbow",
+    "RWrist"
+  ],
+  "target_joint_names": [
+    "pelvis",
+    "r_hip",
+    "r_knee",
+    "r_ankle",
+    "l_hip",
+    "l_knee",
+    "l_ankle",
+    "neck",
+    "head",
+    "l_shoulder",
+    "l_elbow",
+    "l_wrist",
+    "r_shoulder",
+    "r_elbow",
+    "r_wrist"
+  ],
+  "source_indices_for_target": [0, 1, 2, 3, 4, 5, 6, 8, 9, 11, 12, 13, 14, 15, 16],
+  "dropped_source_joints": ["Spine1", "Site"]
+}

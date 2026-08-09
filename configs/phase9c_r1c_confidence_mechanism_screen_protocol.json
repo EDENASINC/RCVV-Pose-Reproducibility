@@ -1,0 +1,97 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1c_confidence_mechanism_screen_protocol_lock_v1",
+  "phase": "9C-R1C",
+  "title": "Detector-Conditioned Bounded Confidence Mechanism Screen",
+  "scientific_role": "validation_only_mechanism_selection_without_test_or_official_access",
+  "source_gate": "READY_FOR_PHASE9C_R1C_CONFIDENCE_MECHANISM_SCREEN",
+  "source_b1_script_sha256": "fc1ae8f11ec6fb1b75c8d8c730e61a67f1b1aa45422227364e4bce71eb72b673",
+  "source_r1b_script_sha256": "d978291223787fe87521c6f26bb6f70bf1275feb1d981edf63815a3e5aa58ea9",
+  "source_r1a_protocol_sha256": "dc5cd89da6addb3458ee0da6ea90ed995d041747ea06815822b798a5c863187e",
+  "development_scope": {
+    "splits": ["split_a", "split_b", "split_c"],
+    "seed": 42,
+    "training_partition": "train",
+    "selection_partition": "val",
+    "development_test_metrics_computed": false
+  },
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "arms": [
+    "detector_conditioned_virtual_view_no_confidence",
+    "calibrated_probability_concat",
+    "bounded_reliability_concat",
+    "bounded_reliability_virtual_gate",
+    "bounded_reliability_dual_modulation"
+  ],
+  "baseline_arm": "detector_conditioned_virtual_view_no_confidence",
+  "confidence_policy": {
+    "calibration": "split_matched_isotonic_probability_correct_at_0.10_torso",
+    "raw_residual_risk_as_model_input": false,
+    "risk_bounding": "quality=1/(1+risk/train_bank_joint_median_positive_risk)",
+    "joint_reliability": "gate=clip(calibrated_probability*quality,0,1)",
+    "risk_scale_source": "phase9c_a_training_residual_bank_only",
+    "risk_scale_floor": 1e-6,
+    "unbounded_previous_mechanism_retrained": false,
+    "unbounded_previous_mechanism_role": "documented_failed_predecessor_not_a_selection_candidate"
+  },
+  "virtual_view_policy": {
+    "source_cache_format": "phase9c_r1a_detector_conditioned_virtual_cache_v1",
+    "source_input": "phase9b_prediction_c15_px_real_detector",
+    "candidate_id": "rotation_yaw_m15",
+    "select_virtual_view_matching_eval_detector": true,
+    "legacy_clean_conditioned_virtual_view_used_as_input": false,
+    "require_exact_dataset_and_detector_index_alignment": true
+  },
+  "detector_missingness_policy": {
+    "primary_metric_cohort": "paired_common_detection",
+    "same_sample_cohort_across_arms_and_detectors": true,
+    "ground_truth_imputation_for_detector_failures": false
+  },
+  "run_matrix": {
+    "splits": 3,
+    "seeds": 1,
+    "detectors": 2,
+    "arms": 5,
+    "total_training_runs": 30,
+    "expected_metric_rows": 60
+  },
+  "training_budget": {
+    "strict_device": "cuda:0",
+    "num_workers": 8,
+    "batch_size": 2048,
+    "eval_batch_size": 2048,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "hidden_width": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "max_train_samples": 0,
+    "max_eval_samples": 0
+  },
+  "selection_policy": {
+    "selection_rows": "matched_detector_validation_only",
+    "checkpoint_selection": "minimum_matched_validation_geometric_mean_mpjpe_pa_mpjpe",
+    "candidate_ranking": "largest_macro_geometric_mean_score_gain_percent_vs_no_confidence",
+    "minimum_macro_mpjpe_gain_percent_for_strong_screen": 1.0,
+    "require_positive_macro_gain_both_metrics": true,
+    "minimum_splits_with_mean_both_metric_wins": 2,
+    "require_each_detector_mean_both_metric_win": true,
+    "tie_tolerance_score_gain_percent": 0.05,
+    "tie_break": "lower_feature_dimension_then_protocol_arm_order",
+    "cross_detector_validation_role": "descriptive_robustness_not_selection",
+    "test_used_for_selection": false
+  },
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "next_gate": {
+    "confidence_selected": "READY_FOR_PHASE9C_R1D_LOCKED_FULL_CONFIRMATION",
+    "no_confidence_selected": "READY_FOR_PHASE9C_R1D_NO_CONFIDENCE_FULL_CONFIRMATION",
+    "fail": "REPAIR_PHASE9C_R1C_BEFORE_FULL_CONFIRMATION"
+  }
+}

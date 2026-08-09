@@ -1,0 +1,60 @@
+# Restricted datasets and local data
+data/
+datasets/
+**/mpi_inf_3dhp*/
+*.mat
+*.avi
+*.mp4
+
+# Model binaries belong in versioned release assets
+checkpoints/
+release_assets/
+local_release_inputs/
+private_review_only/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Large derived caches unless explicitly reviewed
+*.npz
+*.npy
+*.jsonl
+cache/
+caches/
+
+# Secrets and local paths
+.env
+.env.*
+*.pem
+*.key
+local_checkpoint_map.filled.csv
+
+# Python/runtime noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+dist/
+build/
+logs/
+runs/
+wandb/
+*.log
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local collection and machine-specific manifests
+collection_report/
+models/local_checkpoint_map.csv
+models/checkpoint_manifest.collected.csv
+
+# Dataset-derived local diagnostics
+provenance/detectors/root/phase9b_rgb_index.csv
+provenance/detectors/root/phase9b_data_root_diagnostic.json

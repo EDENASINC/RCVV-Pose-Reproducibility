@@ -1,0 +1,48 @@
+{
+  "status": "READY_FOR_UPLOAD",
+  "paper_manuscript_id": "information-4512788",
+  "release_tag": "v1.0.0-paper-information-4512788",
+  "release_url": "",
+  "assets": [
+    {
+      "file": "checkpoints_O_rtmpose.zip",
+      "sha256": "0d3254dbed08055119c49b94ca419978523990336d23b8bf1d4b8d0385c15017",
+      "size_bytes": 8550655
+    },
+    {
+      "file": "checkpoints_O_yolo11l.zip",
+      "sha256": "b8ccbb6991c73c31a6b698f4d09dcfb7279fdffd64d5813397b8e5961cc1583d",
+      "size_bytes": 8535833
+    },
+    {
+      "file": "checkpoints_OV_rtmpose.zip",
+      "sha256": "f8b3f5a11e18817a10ffb1052450280277291018ec35dcb32106d23d51d9273f",
+      "size_bytes": 9264166
+    },
+    {
+      "file": "checkpoints_OV_yolo11l.zip",
+      "sha256": "d9cfb561643cdc3af5b8369bc1e6a0f1ab1956cbf9739749ec39934f66a1b1a7",
+      "size_bytes": 9252271
+    },
+    {
+      "file": "checkpoints_OR_rtmpose.zip",
+      "sha256": "935c7876d2879c592cee613d51a41dfd42cf7bb037c456671597d6dea1e41905",
+      "size_bytes": 9636879
+    },
+    {
+      "file": "checkpoints_OR_yolo11l.zip",
+      "sha256": "247f689f02ba11101a54a8bfd5271f370f8254e1d667d33d7456a116e8b92058",
+      "size_bytes": 9577597
+    },
+    {
+      "file": "checkpoints_OVR_rtmpose.zip",
+      "sha256": "0c10870a9e3e6e4ce0d2d12aa18bc32a07a0fe8f44f4cde0327cd0a19a9f4ca1",
+      "size_bytes": 11087798
+    },
+    {
+      "file": "checkpoints_OVR_yolo11l.zip",
+      "sha256": "c615ebc84638403c3483372421b16d56358c3bfddd8c25c34e6f6227681a4cc9",
+      "size_bytes": 11010659
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "format": "phase9c_a_qc_report_v1",
+  "phase": "9C-A",
+  "scientific_decision": "READY_FOR_PHASE9C_B_FOUR_ARM_MULTISPLIT_TRAINING",
+  "checks": [
+    {
+      "name": "protocol_lock",
+      "passed": true,
+      "detail": "phase9c_a_protocol_lock_v1"
+    },
+    {
+      "name": "build_pass",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "official_test_isolation",
+      "passed": true,
+      "detail": "Official TS1-TS6 unread and unused"
+    },
+    {
+      "name": "no_test_subject_calibration",
+      "passed": true,
+      "detail": "Calibration fit uses training subjects only"
+    },
+    {
+      "name": "six_split_detector_pairs",
+      "passed": true,
+      "detail": "pairs=6"
+    },
+    {
+      "name": "finite_calibration_metrics",
+      "passed": true,
+      "detail": "all six pairs finite"
+    },
+    {
+      "name": "validation_ece_improved_all_pairs",
+      "passed": true,
+      "detail": "minimum reduction=0.245174"
+    },
+    {
+      "name": "validation_brier_improved_all_pairs",
+      "passed": true,
+      "detail": "minimum reduction=0.076570"
+    },
+    {
+      "name": "residual_bank_shape_and_counts",
+      "passed": true,
+      "detail": "shape=(3, 2, 15, 10, 512, 2), stored=433205"
+    },
+    {
+      "name": "residual_bank_valid_vectors_finite",
+      "passed": true,
+      "detail": "all populated residuals finite"
+    },
+    {
+      "name": "artifact_hashes",
+      "passed": true,
+      "detail": "artifacts=4"
+    }
+  ],
+  "calibration_pairs": 6,
+  "minimum_validation_ece_reduction": 0.2451739979730571,
+  "minimum_validation_brier_reduction": 0.07656964550715895,
+  "official_TS1_to_TS6_read": false,
+  "3d_training_performed": false,
+  "next_phase_if_pass": "Phase 9C-B: four-arm, three-split, three-seed confidence-aware V2 training and detector-matched/cross-detector evaluation."
+}

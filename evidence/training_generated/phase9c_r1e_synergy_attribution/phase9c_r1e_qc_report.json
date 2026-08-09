@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1e_qc_report_v1",
+  "phase": "9C-R1E",
+  "scientific_decision": "READY_FOR_PHASE9C_R1F_OFFICIAL_TEST_Q2_CAUTIOUS_SYNERGY",
+  "checks": [
+    {
+      "name": "protocol_preflight_and_r1d_evidence",
+      "passed": true,
+      "detail": "preflight=PASS; r1d_qc=PASS; r1d_gate=STOP_AND_REASSESS_BEFORE_OFFICIAL_TEST"
+    },
+    {
+      "name": "split_reports",
+      "passed": true,
+      "detail": "expected=3 reports and 6 runs per split"
+    },
+    {
+      "name": "new_run_matrix_exact",
+      "passed": true,
+      "detail": "reports=18 missing=0 extra=0"
+    },
+    {
+      "name": "new_run_and_artifact_integrity",
+      "passed": true,
+      "detail": "artifacts=126/126"
+    },
+    {
+      "name": "r1d_source_matrix",
+      "passed": true,
+      "detail": "reports=54/54"
+    },
+    {
+      "name": "four_arm_sample_pairing",
+      "passed": true,
+      "detail": "paired_units=18/18 across O, OV, OR and OVR"
+    },
+    {
+      "name": "paired_statistics_complete",
+      "passed": true,
+      "detail": "paired_units=18/18"
+    }
+  ],
+  "errors": [],
+  "new_run_reports": 18,
+  "reused_r1d_run_reports": 54,
+  "new_artifact_hash_rows": 126,
+  "protocol_sha256": "353ddf445920afd33233eba48d8c3b2950664fa0dd4ca2c643bafef465da5ec1",
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false
+}

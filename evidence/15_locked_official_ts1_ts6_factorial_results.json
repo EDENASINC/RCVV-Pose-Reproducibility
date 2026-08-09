@@ -1,0 +1,369 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1f_official_test_summary_v1",
+  "phase": "9C-R1F",
+  "scientific_decision": "OFFICIAL_TREND_ONLY_WRITE_Q2_CAUTIOUS",
+  "protocol_sha256": "7f07ce67ff926d7e071ec67d84481a43d24d5396f91bfb557b8d9bab30c7d2c1",
+  "official_partition": [
+    "TS1",
+    "TS2",
+    "TS3",
+    "TS4",
+    "TS5",
+    "TS6"
+  ],
+  "input_2d": "real RGB detector predictions; no GT2D model input",
+  "valid_frames": 2875,
+  "joint_layout": "canonical non-root 14 joints",
+  "missing_detection_policy": "zero observed-root pose, zero virtual pose, zero confidence, and forced zero reliability; retain frame in primary metrics",
+  "detector_coverage": {
+    "rtmpose_performance": {
+      "detected": 2875,
+      "total": 2875,
+      "success_rate": 1.0,
+      "by_subject": {
+        "TS1": 1.0,
+        "TS2": 1.0,
+        "TS3": 1.0,
+        "TS4": 1.0,
+        "TS5": 1.0,
+        "TS6": 1.0
+      }
+    },
+    "yolo11l_pose": {
+      "detected": 2875,
+      "total": 2875,
+      "success_rate": 1.0,
+      "by_subject": {
+        "TS1": 1.0,
+        "TS2": 1.0,
+        "TS3": 1.0,
+        "TS4": 1.0,
+        "TS5": 1.0,
+        "TS6": 1.0
+      }
+    }
+  },
+  "aggregate_subject_split_seed_detector_macro": {
+    "detector_aware_observed": {
+      "MPJPE_mm": 127.29545543811939,
+      "PA_MPJPE_mm": 84.17566776275635,
+      "3DPCK_at_150mm_pct": 71.02845048896823,
+      "AUC_0_to_150mm_pct": 34.55957013731651
+    },
+    "detector_conditioned_virtual_view_no_confidence": {
+      "MPJPE_mm": 127.46786202324762,
+      "PA_MPJPE_mm": 83.85583178202312,
+      "3DPCK_at_150mm_pct": 71.0964278495863,
+      "AUC_0_to_150mm_pct": 34.22776768279459
+    },
+    "bounded_reliability_observed_modulation": {
+      "MPJPE_mm": 126.48062317459672,
+      "PA_MPJPE_mm": 82.18806076049805,
+      "3DPCK_at_150mm_pct": 71.37930784609728,
+      "AUC_0_to_150mm_pct": 34.49373234782931
+    },
+    "bounded_reliability_dual_modulation": {
+      "MPJPE_mm": 126.06470284638581,
+      "PA_MPJPE_mm": 81.84858551731816,
+      "3DPCK_at_150mm_pct": 71.59197178910244,
+      "AUC_0_to_150mm_pct": 34.374589758939955
+    }
+  },
+  "primary_improvement_positive_is_better": {
+    "MPJPE_improvement_mm": 1.2307525917335767,
+    "PA_MPJPE_improvement_mm": 2.3270822454381914,
+    "3DPCK_improvement_pct_point": 0.5635213001342123,
+    "AUC_improvement_pct_point": -0.184980378376558,
+    "MPJPE_relative_gain_pct": 0.9668472354316432
+  },
+  "detector_specific_primary_improvement": {
+    "rtmpose_performance": {
+      "MPJPE_improvement_mm": 1.4258537292480469,
+      "PA_MPJPE_improvement_mm": 2.257815608271841,
+      "3DPCK_improvement_pct_point": 0.7741683725008812,
+      "AUC_improvement_pct_point": 0.10465578523883323,
+      "MPJPE_relative_gain_pct": 1.1650287912686075
+    },
+    "yolo11l_pose": {
+      "MPJPE_improvement_mm": 1.0356514542191064,
+      "PA_MPJPE_improvement_mm": 2.396348882604528,
+      "3DPCK_improvement_pct_point": 0.3528742277675434,
+      "AUC_improvement_pct_point": -0.47461654199194214,
+      "MPJPE_relative_gain_pct": 0.7833793514855519
+    }
+  },
+  "bootstrap": {
+    "primary_full_vs_observed": {
+      "replicates": 20000,
+      "seed": 20260803,
+      "hierarchy": [
+        "subject",
+        "split",
+        "seed_within_split",
+        "detector"
+      ],
+      "confidence_intervals": {
+        "MPJPE_improvement_mm": {
+          "mean": 1.236624069231528,
+          "ci95": [
+            -1.23381971076681,
+            3.644148579350215
+          ],
+          "probability_positive": 0.8552
+        },
+        "PA_MPJPE_improvement_mm": {
+          "mean": 2.3251382375999734,
+          "ci95": [
+            -0.22909303506215506,
+            4.953839215525858
+          ],
+          "probability_positive": 0.9642
+        },
+        "3DPCK_improvement_pct_point": {
+          "mean": 0.5659950283943649,
+          "ci95": [
+            -0.3259035327959207,
+            1.5993529595189395
+          ],
+          "probability_positive": 0.8947
+        },
+        "AUC_improvement_pct_point": {
+          "mean": -0.1835517750955708,
+          "ci95": [
+            -1.0405458643659913,
+            0.6041334284825783
+          ],
+          "probability_positive": 0.33565
+        },
+        "MPJPE_relative_gain_pct": {
+          "mean": 0.9523846582574693,
+          "ci95": [
+            -1.003935674901157,
+            2.745496266214712
+          ],
+          "probability_positive": 0.8552
+        }
+      }
+    },
+    "conditional_virtual_full_vs_reliability": {
+      "replicates": 20000,
+      "seed": 20260803,
+      "hierarchy": [
+        "subject",
+        "split",
+        "seed_within_split",
+        "detector"
+      ],
+      "confidence_intervals": {
+        "MPJPE_improvement_mm": {
+          "mean": 0.42688962679262515,
+          "ci95": [
+            -1.7381298012203732,
+            2.653332812697796
+          ],
+          "probability_positive": 0.66365
+        },
+        "PA_MPJPE_improvement_mm": {
+          "mean": 0.33890910701398497,
+          "ci95": [
+            -0.9195360289679548,
+            1.5335649313750181
+          ],
+          "probability_positive": 0.7419
+        },
+        "3DPCK_improvement_pct_point": {
+          "mean": 0.21808620863145098,
+          "ci95": [
+            -0.9118060692469928,
+            1.5768639206906376
+          ],
+          "probability_positive": 0.6334
+        },
+        "AUC_improvement_pct_point": {
+          "mean": -0.11559025731793936,
+          "ci95": [
+            -1.0147867245686515,
+            0.8144730751045315
+          ],
+          "probability_positive": 0.39115
+        },
+        "MPJPE_relative_gain_pct": {
+          "mean": 0.3228988781452616,
+          "ci95": [
+            -1.4497207518672774,
+            2.0329628061513976
+          ],
+          "probability_positive": 0.66365
+        }
+      }
+    },
+    "reliability_only_vs_observed": {
+      "replicates": 20000,
+      "seed": 20260803,
+      "hierarchy": [
+        "subject",
+        "split",
+        "seed_within_split",
+        "detector"
+      ],
+      "confidence_intervals": {
+        "MPJPE_improvement_mm": {
+          "mean": 0.8097344424389028,
+          "ci95": [
+            -2.8403443707360223,
+            3.709368140609172
+          ],
+          "probability_positive": 0.7173
+        },
+        "PA_MPJPE_improvement_mm": {
+          "mean": 1.9862291305859883,
+          "ci95": [
+            -0.3315521814204963,
+            4.374605823446202
+          ],
+          "probability_positive": 0.95855
+        },
+        "3DPCK_improvement_pct_point": {
+          "mean": 0.3479088197629138,
+          "ci95": [
+            -1.1443598649036026,
+            1.7933017812656553
+          ],
+          "probability_positive": 0.72095
+        },
+        "AUC_improvement_pct_point": {
+          "mean": -0.06796151777763147,
+          "ci95": [
+            -1.0878080034549897,
+            0.9706351651502715
+          ],
+          "probability_positive": 0.44895
+        },
+        "MPJPE_relative_gain_pct": {
+          "mean": 0.6239678355461447,
+          "ci95": [
+            -2.231358987879956,
+            2.830489272296909
+          ],
+          "probability_positive": 0.7173
+        }
+      }
+    },
+    "ungated_virtual_vs_observed": {
+      "replicates": 20000,
+      "seed": 20260803,
+      "hierarchy": [
+        "subject",
+        "split",
+        "seed_within_split",
+        "detector"
+      ],
+      "confidence_intervals": {
+        "MPJPE_improvement_mm": {
+          "mean": -0.1659930469336333,
+          "ci95": [
+            -3.0028733288800256,
+            3.4797086839322806
+          ],
+          "probability_positive": 0.4294
+        },
+        "PA_MPJPE_improvement_mm": {
+          "mean": 0.3144065833250682,
+          "ci95": [
+            -1.3014315746448688,
+            2.3072711750313135
+          ],
+          "probability_positive": 0.6086
+        },
+        "3DPCK_improvement_pct_point": {
+          "mean": 0.0716082775325171,
+          "ci95": [
+            -1.30029201311227,
+            2.1682426476836536
+          ],
+          "probability_positive": 0.47775
+        },
+        "AUC_improvement_pct_point": {
+          "mean": -0.328546726545768,
+          "ci95": [
+            -1.317280279175603,
+            0.8943433045696656
+          ],
+          "probability_positive": 0.25975
+        },
+        "MPJPE_relative_gain_pct": {
+          "mean": -0.13732573382612706,
+          "ci95": [
+            -2.4222596397388534,
+            2.750664978030326
+          ],
+          "probability_positive": 0.4294
+        }
+      }
+    },
+    "virtual_reliability_interaction": {
+      "replicates": 20000,
+      "seed": 20260803,
+      "hierarchy": [
+        "subject",
+        "split",
+        "seed_within_split",
+        "detector"
+      ],
+      "confidence_intervals": {
+        "MPJPE_improvement_mm": {
+          "mean": 0.5928826737262585,
+          "ci95": [
+            -3.0466568699589325,
+            3.5182903607686518
+          ],
+          "probability_positive": 0.6833
+        },
+        "PA_MPJPE_improvement_mm": {
+          "mean": 0.024502523688916807,
+          "ci95": [
+            -2.1503284295400062,
+            2.007577458134399
+          ],
+          "probability_positive": 0.52685
+        },
+        "3DPCK_improvement_pct_point": {
+          "mean": 0.14647793109893392,
+          "ci95": [
+            -2.1293628404958733,
+            1.7578610858375123
+          ],
+          "probability_positive": 0.6304
+        },
+        "AUC_improvement_pct_point": {
+          "mean": 0.2129564692278287,
+          "ci95": [
+            -1.0592137661466736,
+            1.1911130501885
+          ],
+          "probability_positive": 0.7006
+        },
+        "MPJPE_relative_gain_pct": {
+          "mean": 0.46022461197138875,
+          "ci95": [
+            -2.4490540758967754,
+            2.779057895604476
+          ],
+          "probability_positive": 0.6823
+        }
+      }
+    }
+  },
+  "decision_checks": {
+    "primary_ci_positive_both": false,
+    "both_detector_means_positive_both": true,
+    "detector_coverage_threshold_met": true,
+    "primary_point_positive_both": true
+  },
+  "official_test_used_for_selection": false,
+  "retraining_on_official_test": false,
+  "project_level_legacy_phase7_official_evaluation_exists": true,
+  "r1f_detector_input_method_previously_evaluated_on_official_TS1_to_TS6": false,
+  "completed_utc": "2026-08-02T23:58:55.697739+00:00"
+}

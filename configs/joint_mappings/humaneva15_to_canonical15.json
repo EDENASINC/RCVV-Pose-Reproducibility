@@ -1,0 +1,43 @@
+{
+  "source_name": "humaneva15",
+  "target_name": "canonical_15j_v1",
+  "source_joint_names": [
+    "pelvis",
+    "r_hip",
+    "r_knee",
+    "r_ankle",
+    "l_hip",
+    "l_knee",
+    "l_ankle",
+    "neck",
+    "head",
+    "l_shoulder",
+    "l_elbow",
+    "l_hand",
+    "r_shoulder",
+    "r_elbow",
+    "r_hand"
+  ],
+  "target_joint_names": [
+    "pelvis",
+    "r_hip",
+    "r_knee",
+    "r_ankle",
+    "l_hip",
+    "l_knee",
+    "l_ankle",
+    "neck",
+    "head",
+    "l_shoulder",
+    "l_elbow",
+    "l_wrist",
+    "r_shoulder",
+    "r_elbow",
+    "r_wrist"
+  ],
+  "source_indices_for_target": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+  "semantic_renames": {
+    "l_hand": "l_wrist",
+    "r_hand": "r_wrist"
+  }
+}

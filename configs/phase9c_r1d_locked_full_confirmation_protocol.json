@@ -1,0 +1,117 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1d_locked_full_confirmation_protocol_v1",
+  "phase": "9C-R1D",
+  "title": "Locked Multisplit-Multiseed Detector-Conditioned Virtual-View Confirmation",
+  "scientific_role": "locked_method_confirmation_and_post_selection_development_test_without_official_test_access",
+  "source_gate": "READY_FOR_PHASE9C_R1D_LOCKED_FULL_CONFIRMATION",
+  "locked_selected_arm": "bounded_reliability_dual_modulation",
+  "source_b1_script_sha256": "fc1ae8f11ec6fb1b75c8d8c730e61a67f1b1aa45422227364e4bce71eb72b673",
+  "source_r1c_script_sha256": "0bcfee2535017abc6d4648b62b1b8e358a0251fe25a6a7e07304499eb73b7dfc",
+  "source_r1c_protocol_sha256": "47a879011f8f09b8b17f1374bb878a4661b3a7ae0a37c6b3f011d002bbdbc206",
+  "source_r1c_statistics_sha256": "fba59d4701f77476a647e30feacb7e071866c1101337f0fed8a6e7635ab385b0",
+  "source_r1c_qc_sha256": "be96801b5e5ddfbef679d7ace03956f1f1241b0426f06a8da4d15b5cd133413d",
+  "source_r1a_protocol_sha256": "dc5cd89da6addb3458ee0da6ea90ed995d041747ea06815822b798a5c863187e",
+  "development_scope": {
+    "splits": ["split_a", "split_b", "split_c"],
+    "seeds": [42, 123, 2026],
+    "partitions": ["train", "val", "test"],
+    "checkpoint_selection_partition": "matched_detector_validation_only",
+    "test_role": "post_selection_confirmation_only",
+    "test_used_for_checkpoint_selection": false
+  },
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "arms": [
+    "detector_aware_observed",
+    "detector_conditioned_virtual_view_no_confidence",
+    "bounded_reliability_dual_modulation"
+  ],
+  "feature_lock": {
+    "detector_aware_observed": 28,
+    "detector_conditioned_virtual_view_no_confidence": 56,
+    "bounded_reliability_dual_modulation": 126,
+    "selected_mechanism": "observed || virtual || reliability*observed || reliability*virtual || reliability",
+    "raw_residual_risk_as_model_input": false,
+    "bounded_reliability_range": [0.0, 1.0]
+  },
+  "virtual_view_policy": {
+    "source_cache_format": "phase9c_r1a_detector_conditioned_virtual_cache_v1",
+    "source_input": "phase9b_prediction_c15_px_real_detector",
+    "candidate_id": "rotation_yaw_m15",
+    "select_virtual_view_matching_eval_detector": true,
+    "legacy_clean_conditioned_virtual_view_used_as_input": false,
+    "require_exact_dataset_and_detector_index_alignment": true
+  },
+  "detector_missingness_policy": {
+    "primary_metric_cohort": "paired_common_detection",
+    "same_sample_cohort_across_arms_and_detectors": true,
+    "ground_truth_imputation_for_detector_failures": false,
+    "report_detection_coverage_separately": true
+  },
+  "calibration_and_risk_policy": {
+    "calibration_model_must_match_cross_subject_split": true,
+    "residual_risk_bank_must_match_cross_subject_split": true,
+    "risk_bounding": "quality=1/(1+risk/train_bank_joint_median_positive_risk)",
+    "joint_reliability": "clip(calibrated_probability*quality,0,1)",
+    "split_to_residual_risk_index": {"split_a": 0, "split_b": 1, "split_c": 2},
+    "risk_scale_floor": 1e-6
+  },
+  "run_matrix": {
+    "splits": 3,
+    "seeds": 3,
+    "detectors": 2,
+    "arms": 3,
+    "total_training_runs": 54,
+    "evaluations_per_run": 4,
+    "expected_metric_rows": 216
+  },
+  "training_budget": {
+    "strict_device": "cuda:0",
+    "num_workers": 8,
+    "batch_size": 2048,
+    "eval_batch_size": 2048,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "hidden_width": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "max_train_samples": 0,
+    "max_eval_samples": 0
+  },
+  "model_selection_policy": {
+    "checkpoint_selection": "minimum_matched_validation_geometric_mean_mpjpe_pa_mpjpe",
+    "development_test_used_for_selection": false,
+    "cross_detector_role": "descriptive_robustness_only_not_model_selection"
+  },
+  "predeclared_comparisons": {
+    "primary": "bounded_reliability_dual_modulation_vs_detector_aware_observed_matched_detector_development_test",
+    "confidence_ablation": "bounded_reliability_dual_modulation_vs_detector_conditioned_virtual_view_no_confidence_matched_detector_development_test",
+    "virtual_view_ablation": "detector_conditioned_virtual_view_no_confidence_vs_detector_aware_observed_matched_detector_development_test",
+    "secondary": "the_same_three_comparisons_under_cross_detector_evaluation_descriptive_only"
+  },
+  "statistical_policy": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260802,
+    "confidence_level": 0.95,
+    "hierarchy": ["split", "seed", "detector"],
+    "paired_unit_count": 18,
+    "reported_metrics": ["MPJPE", "PA-MPJPE"],
+    "minimum_primary_mpjpe_gain_percent": 2.0,
+    "minimum_splits_with_both_metric_wins": 2,
+    "require_both_detectors_mean_both_metric_win": true,
+    "strong_gate_requires_positive_hierarchical_ci_for_all_three_matched_comparisons": true
+  },
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "next_gate": {
+    "strong": "READY_FOR_PHASE9C_R1E_OFFICIAL_TEST_Q1_Q2_STRONG",
+    "cautionary": "READY_FOR_PHASE9C_R1E_OFFICIAL_TEST_Q2_CAUTIOUS",
+    "redesign": "STOP_AND_REASSESS_BEFORE_OFFICIAL_TEST"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1h_q2_manuscript_protocol_v1",
+  "phase": "9C-R1H",
+  "title": "Q2 Manuscript Update from Frozen Phase9C Evidence",
+  "source_r1g": {
+    "relative_path": "outputs/phase9c_r1g_q2_evidence_freeze/phase9c_r1g_results.zip",
+    "sha256": "e677c5c89b411c2fa353a5dcf4f1221279dc2fe2886b29794784aeab06cb11b9",
+    "required_qc_status": "PASS",
+    "required_scientific_decision": "READY_FOR_PHASE9C_R1H_Q2_MANUSCRIPT_UPDATE",
+    "required_file_count": 36
+  },
+  "reporting_policy": {
+    "training_performed": false,
+    "model_inference_performed": false,
+    "official_TS1_to_TS6_reopened": false,
+    "official_result_changed": false,
+    "journal_neutral_template": true,
+    "local_latex_required": false
+  },
+  "claim_lock": {
+    "development_full_vs_observed": "confirmed with paired hierarchical-bootstrap CIs above zero",
+    "official_full_vs_observed": "positive external trend with both primary CIs crossing zero",
+    "virtual_view_increment": "positive point trend but statistically unresolved",
+    "state_of_the_art_claim": "forbidden",
+    "official_statistical_superiority_claim": "forbidden",
+    "confirmed_virtual_view_synergy_claim": "forbidden"
+  },
+  "required_manuscript_sections": [
+    "Abstract",
+    "Introduction",
+    "Related Work",
+    "Method",
+    "Experimental Protocol",
+    "Results",
+    "Discussion",
+    "Limitations",
+    "Conclusion",
+    "Data and Reproducibility Statement"
+  ],
+  "required_locked_numbers": {
+    "development_mpjpe_gain_mm": 3.049,
+    "development_pa_mpjpe_gain_mm": 1.596,
+    "official_frames": 2875,
+    "official_observed_mpjpe_mm": 127.295,
+    "official_full_mpjpe_mm": 126.065,
+    "official_observed_pa_mpjpe_mm": 84.176,
+    "official_full_pa_mpjpe_mm": 81.849,
+    "official_mpjpe_ci95": [-1.234, 3.644],
+    "official_pa_mpjpe_ci95": [-0.229, 4.954]
+  },
+  "next_gate": "READY_FOR_PHASE9C_R1I_Q2_VENUE_TEMPLATE_AND_SUBMISSION_AUDIT"
+}

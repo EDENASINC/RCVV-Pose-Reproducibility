@@ -1,0 +1,17 @@
+﻿subject,sequence,group_exists,annotation_exists,calibration_exists,camera_count,camera_ids,video_count,zero_byte_videos,total_video_bytes,status
+S1,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,447315828,PASS
+S1,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,456593314,PASS
+S2,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,363028386,PASS
+S2,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,399516242,PASS
+S3,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,446281112,PASS
+S3,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,561810920,PASS
+S4,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,380314158,PASS
+S4,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,424578448,PASS
+S5,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,353702654,PASS
+S5,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,369031066,PASS
+S6,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,354351474,PASS
+S6,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,360494256,PASS
+S7,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,493852544,PASS
+S7,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,464017804,PASS
+S8,Seq1,True,True,True,8,0 1 2 4 5 6 7 8,8,0,508868424,PASS
+S8,Seq2,True,True,True,8,0 1 2 4 5 6 7 8,8,0,431126830,PASS

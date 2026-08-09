@@ -1,0 +1,23 @@
+{
+  "format": "phase9b_strict_gpu_check_v1",
+  "status": "PASS",
+  "cpu_fallback_allowed": false,
+  "official_TS1_to_TS6_read": false,
+  "torch_version": "2.13.0+cu130",
+  "torch_cuda_version": "13.0",
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "onnxruntime_version": "1.28.0",
+  "rtmpose_device": "cuda:0",
+  "rtmpose_execution_providers": {
+    "det_model": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "pose_model": [
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "yolo_device": 0,
+  "yolo_cuda_device_name": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

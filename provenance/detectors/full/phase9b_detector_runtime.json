@@ -1,0 +1,104 @@
+{
+  "format": "phase9b_detector_runtime_v3",
+  "run_id": "full",
+  "sample_count_requested": 160728,
+  "cuda": {
+    "required": true,
+    "cpu_fallback_allowed": false,
+    "torch_available": true,
+    "torch_version": "2.13.0+cu130",
+    "torch_cuda_version": "13.0",
+    "device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "onnxruntime_version": "1.28.0",
+    "onnxruntime_available_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "detectors": {
+    "rtmpose_performance": {
+      "status": "completed_on_gpu",
+      "device": "cuda:0",
+      "cached_samples_reused": 14538,
+      "new_samples": 146190,
+      "elapsed_seconds": 16565.049521499997,
+      "new_samples_per_second": 8.825207543766052,
+      "model_files": [
+        {
+          "role": "person_detector",
+          "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\onnx\\end2end.onnx",
+          "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+          "archive_name": "yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+          "archive_member": "20230928/yolox_onnx/yolox_x_8xb8-300e_humanart-a39d44ed/end2end.onnx",
+          "size_bytes": 396283264,
+          "sha256": "8e9ea96a176bd48501eaaa77216e49ee30794d2f8ba80c7b9862beca4ea972da"
+        },
+        {
+          "role": "pose_estimator",
+          "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\onnx\\end2end.onnx",
+          "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+          "archive_name": "rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+          "archive_member": "20230831/rtmpose_onnx/rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629/end2end.onnx",
+          "size_bytes": 197660326,
+          "sha256": "df0c0fa91e9870b1515dcaff741fd76cc753dcfb12786862f61b243bae81cd52"
+        }
+      ],
+      "execution_providers": {
+        "det_model": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ],
+        "pose_model": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ]
+      },
+      "source_archives": [
+        {
+          "role": "person_detector",
+          "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\archives\\yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+          "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+          "size_bytes": 368200375,
+          "sha256": "1c6fccc5cd450eb563b1fe4eba13c9bdf9ea8263b6ae1cb3ada765aa4ebea2c7"
+        },
+        {
+          "role": "pose_estimator",
+          "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\archives\\rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+          "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+          "size_bytes": 184294200,
+          "sha256": "1174dd5ccf780501835017eb7376a93fc202238457549a8af8f6aa6d44ae548a"
+        }
+      ],
+      "implementation": {
+        "package": "rtmlib",
+        "version": "0.0.15",
+        "mode": "performance",
+        "source_file": "D:\\Research\\vv_pose_project\\.venv\\Lib\\site-packages\\rtmlib\\tools\\solution\\body.py",
+        "source_file_sha256": "aa00a5432c04889b6eb610c5214a8ae8b89a86ba7bb48989544d989f4eebbf3d",
+        "configuration_urls_verified": true
+      },
+      "provenance_repair": {
+        "phase": "9B-R3",
+        "timestamp_utc": "2026-07-31T22:44:43.822851+00:00",
+        "inference_repeated": false,
+        "prediction_cache_changed": false
+      }
+    },
+    "yolo11l_pose": {
+      "status": "completed_on_gpu",
+      "device": 0,
+      "cached_samples_reused": 0,
+      "new_samples": 160728,
+      "elapsed_seconds": 10741.662419800006,
+      "new_samples_per_second": 14.963047032992916,
+      "model_files": [
+        {
+          "path": "D:\\Research\\vv_pose_project\\yolo11l-pose.pt",
+          "sha256": "61921abe1f2ed930bf28328a16b3162278cdb239a1e8280b6ac827119f13cee0"
+        }
+      ],
+      "cuda_device_name": "NVIDIA GeForce RTX 4060 Laptop GPU"
+    }
+  }
+}

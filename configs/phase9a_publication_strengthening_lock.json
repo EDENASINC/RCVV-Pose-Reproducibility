@@ -1,0 +1,46 @@
+{
+  "format": "phase9a_publication_strengthening_lock_v1",
+  "created_date": "2026-07-30",
+  "purpose": "Read-only feasibility audit for publication-strengthening experiments.",
+  "official_test_lock": {
+    "prior_decision": "NOT_EXTERNALLY_CONFIRMED",
+    "official_mpjpe_relative_gain_pct": 1.396541784575217,
+    "official_mpjpe_ci95_mm": [
+      -0.11844037020648589,
+      2.0410537048622417
+    ],
+    "official_pa_mpjpe_relative_gain_pct": 3.7024761804491493,
+    "official_pa_mpjpe_ci95_mm": [
+      0.8302614229696756,
+      2.3709820146913865
+    ],
+    "five_percent_target_confirmed": false,
+    "detector_noise_robustness_confirmed": false,
+    "leaderboard_comparison_allowed": false
+  },
+  "publication_reframing": {
+    "prohibited_primary_novelty": "First use of synthesized virtual 2D views for monocular 3D human pose estimation.",
+    "primary_gap": "Reliability and validity of synthesized virtual 2D views under leakage-controlled, multi-split, multi-seed, locked external, and detector-noise evaluation.",
+    "close_prior_work_to_add": [
+      "NovelPoseNet: Synthesizing novel views of 2D poses for absolute and relative monocular 3D human pose estimation (Pattern Recognition Letters, 2026).",
+      "Weakly-Supervised Discovery of Geometry-Aware Representation for 3D Human Pose Estimation (CVPR, 2019).",
+      "PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation (2021).",
+      "PoseIRM: Enhance 3D Human Pose Estimation on Unseen Camera Settings (CVPR, 2024).",
+      "MVLift: Lifting Motion to the 3D World via 2D Diffusion (2024/2025)."
+    ]
+  },
+  "dataset_environment_variables": {
+    "human36m": "H36M_ROOT",
+    "humaneva": "HUMANEVA_ROOT",
+    "mpi_inf_3dhp": "MPI_INF_3DHP_ROOT"
+  },
+  "privacy_and_protocol": {
+    "read_sample_content": false,
+    "load_checkpoint_tensor": false,
+    "run_training": false,
+    "run_inference": false,
+    "recompute_metrics": false,
+    "include_dataset_files_in_output": false,
+    "include_checkpoint_files_in_output": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_b_protocol_lock_v1",
+  "phase": "9C-B",
+  "title": "Calibrated Joint-Confidence-Aware Virtual-View Training",
+  "source_phase": "9C-A",
+  "source_gate": "READY_FOR_PHASE9C_B_FOUR_ARM_MULTISPLIT_TRAINING",
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "development_splits": ["split_a", "split_b", "split_c"],
+  "seeds": [42, 123, 2026],
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "arms": [
+    "clean_observed_legacy",
+    "detector_aware_observed",
+    "virtual_view_no_confidence",
+    "calibrated_confidence_virtual_view"
+  ],
+  "training_budget": {
+    "num_workers": 8,
+    "batch_size": 2048,
+    "eval_batch_size": 2048,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "amp": true,
+    "checkpoint_selection": "development validation balanced MPJPE/PA-MPJPE only"
+  },
+  "join_identity": ["subject", "sequence", "target_camera_id", "frame_idx"],
+  "real_detector_evaluation": {
+    "matched_and_cross_detector": true,
+    "ground_truth_3d_used_for_join": false,
+    "test_partition_used_for_model_selection": false
+  },
+  "b0_gate": {
+    "require_source_phase9c_a_pass": true,
+    "require_phase9b_cache_hash_match": true,
+    "require_unique_detector_identity": true,
+    "require_complete_join_for_all_three_splits": true,
+    "require_camera_normalized_gt_p95_error_max": 0.00001,
+    "pass_decision": "READY_FOR_PHASE9C_B1_FOUR_ARM_SMOKE",
+    "fail_decision": "REPAIR_PHASE9C_B0_ALIGNMENT_BEFORE_TRAINING"
+  }
+}

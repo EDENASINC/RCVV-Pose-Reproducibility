@@ -1,0 +1,75 @@
+{
+  "format": "phase9b_r3_provenance_repair_v1",
+  "phase": "9B-R3",
+  "status": "PASS",
+  "timestamp_utc": "2026-07-31T22:44:43.822851+00:00",
+  "inference_repeated": false,
+  "official_TS1_to_TS6_read": false,
+  "checks": [
+    {
+      "name": "previous_blocker_is_provenance_only",
+      "passed": true,
+      "detail": [
+        "detector_runtime_and_weight_hashes_recorded: {'rtmpose_performance': 0, 'yolo11l_pose': 1}"
+      ]
+    },
+    {
+      "name": "two_locked_rtmpose_onnx_models_hashed",
+      "passed": true,
+      "detail": [
+        "person_detector",
+        "pose_estimator"
+      ]
+    },
+    {
+      "name": "no_inference_repeated",
+      "passed": true,
+      "detail": "Runtime provenance JSON only; predictions/cache untouched"
+    }
+  ],
+  "error": null,
+  "rtmlib_version": "0.0.15",
+  "rtmlib_source_file_sha256": "aa00a5432c04889b6eb610c5214a8ae8b89a86ba7bb48989544d989f4eebbf3d",
+  "model_files": [
+    {
+      "role": "person_detector",
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\onnx\\end2end.onnx",
+      "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+      "archive_name": "yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+      "archive_member": "20230928/yolox_onnx/yolox_x_8xb8-300e_humanart-a39d44ed/end2end.onnx",
+      "size_bytes": 396283264,
+      "sha256": "8e9ea96a176bd48501eaaa77216e49ee30794d2f8ba80c7b9862beca4ea972da"
+    },
+    {
+      "role": "pose_estimator",
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\onnx\\end2end.onnx",
+      "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+      "archive_name": "rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+      "archive_member": "20230831/rtmpose_onnx/rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629/end2end.onnx",
+      "size_bytes": 197660326,
+      "sha256": "df0c0fa91e9870b1515dcaff741fd76cc753dcfb12786862f61b243bae81cd52"
+    }
+  ],
+  "source_archives": [
+    {
+      "role": "person_detector",
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\archives\\yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+      "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/yolox_x_8xb8-300e_humanart-a39d44ed.zip",
+      "size_bytes": 368200375,
+      "sha256": "1c6fccc5cd450eb563b1fe4eba13c9bdf9ea8263b6ae1cb3ada765aa4ebea2c7"
+    },
+    {
+      "role": "pose_estimator",
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\provenance_models\\rtmpose_performance\\archives\\rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+      "source_url": "https://download.openmmlab.com/mmpose/v1/projects/rtmposev1/onnx_sdk/rtmpose-x_simcc-body7_pt-body7_700e-384x288-71d7b7e9_20230629.zip",
+      "size_bytes": 184294200,
+      "sha256": "1174dd5ccf780501835017eb7376a93fc202238457549a8af8f6aa6d44ae548a"
+    }
+  ],
+  "detector_cache": {
+    "path": "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\full\\phase9b_detector_cache.npz",
+    "size_bytes": 63456107,
+    "sha256": "beebb5c3a0bdcb3ac23cba39487f89d747602d6470ba7aa55dd4c8447956ec83",
+    "changed": false
+  }
+}

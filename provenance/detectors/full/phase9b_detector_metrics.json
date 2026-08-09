@@ -1,0 +1,673 @@
+{
+  "format": "phase9b_rgb_detector_metrics_v1",
+  "phase": "9B",
+  "run_id": "full",
+  "protocol": {
+    "official_TS1_to_TS6_read": false,
+    "model_training_performed": false,
+    "ground_truth_assisted_person_selection": false,
+    "primary_subset": "common12"
+  },
+  "detectors": {
+    "rtmpose_performance": {
+      "detector_id": "rtmpose_performance",
+      "samples": 160728,
+      "detected_samples": 160728,
+      "detection_success_rate": 1.0,
+      "common12": {
+        "finite_fraction": 0.9999937783086954,
+        "mean_nme": 0.3109484612941742,
+        "median_nme": 0.10166339576244354,
+        "pck2d_at_0_05_torso_pct": 18.62402292914901,
+        "pck2d_at_0_10_torso_pct": 49.102982075195825,
+        "p90_nme": 0.3316262662410736,
+        "p95_nme": 0.7377833127975464
+      },
+      "full15": {
+        "finite_fraction": 0.9999937783086954,
+        "mean_nme": 0.3165936768054962,
+        "median_nme": 0.11250093579292297,
+        "pck2d_at_0_05_torso_pct": 16.060483511378507,
+        "pck2d_at_0_10_torso_pct": 43.77517985984516,
+        "p90_nme": 0.3271828889846802,
+        "p95_nme": 0.6799124479293823
+      },
+      "confidence_error_correlation": 0.434734215483015,
+      "confidence_calibration_ece_at_0_10_torso": 0.28464770501971576,
+      "confidence_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 1305,
+          "mean_confidence": 0.08820674568414688,
+          "mean_nme": 5.157672882080078,
+          "median_nme": 4.119940280914307,
+          "p90_nme": 9.292346954345703,
+          "p95_nme": 9.804887771606445,
+          "pck2d_at_0_10_torso": 0.0007662835249042146
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 19593,
+          "mean_confidence": 0.15394297242164612,
+          "mean_nme": 5.626612663269043,
+          "median_nme": 5.1004557609558105,
+          "p90_nme": 8.890332221984863,
+          "p95_nme": 10.79222297668457,
+          "pck2d_at_0_10_torso": 0.0009697340887051498
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 25766,
+          "mean_confidence": 0.24741829931735992,
+          "mean_nme": 4.482337951660156,
+          "median_nme": 4.4059343338012695,
+          "p90_nme": 7.987160682678223,
+          "p95_nme": 9.62796688079834,
+          "pck2d_at_0_10_torso": 0.00931460063649771
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 29484,
+          "mean_confidence": 0.35514771938323975,
+          "mean_nme": 2.0451695919036865,
+          "median_nme": 0.6611292958259583,
+          "p90_nme": 6.016696929931641,
+          "p95_nme": 7.455856800079346,
+          "pck2d_at_0_10_torso": 0.04507529507529508
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 51829,
+          "mean_confidence": 0.45445606112480164,
+          "mean_nme": 0.9114739298820496,
+          "median_nme": 0.3319966495037079,
+          "p90_nme": 1.6519180536270142,
+          "p95_nme": 4.906667709350586,
+          "pck2d_at_0_10_torso": 0.10451677632213625
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 92155,
+          "mean_confidence": 0.5551721453666687,
+          "mean_nme": 0.40210336446762085,
+          "median_nme": 0.20782122015953064,
+          "p90_nme": 0.7012956142425537,
+          "p95_nme": 1.1191694736480713,
+          "pck2d_at_0_10_torso": 0.18446096250881666
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 202320,
+          "mean_confidence": 0.657741367816925,
+          "mean_nme": 0.20793460309505463,
+          "median_nme": 0.14147409796714783,
+          "p90_nme": 0.35151633620262146,
+          "p95_nme": 0.5122128129005432,
+          "pck2d_at_0_10_torso": 0.31890075128509293
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 494677,
+          "mean_confidence": 0.7565004825592041,
+          "mean_nme": 0.1395820826292038,
+          "median_nme": 0.1060585230588913,
+          "p90_nme": 0.2382081300020218,
+          "p95_nme": 0.31945228576660156,
+          "pck2d_at_0_10_torso": 0.4646971660295506
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 667518,
+          "mean_confidence": 0.8470016121864319,
+          "mean_nme": 0.11066599935293198,
+          "median_nme": 0.0843048095703125,
+          "p90_nme": 0.18299894034862518,
+          "p95_nme": 0.24025896191596985,
+          "pck2d_at_0_10_torso": 0.6089229054497407
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 344077,
+          "mean_confidence": 0.9552747011184692,
+          "mean_nme": 0.10952073335647583,
+          "median_nme": 0.07835555076599121,
+          "p90_nme": 0.18093717098236084,
+          "p95_nme": 0.2439376562833786,
+          "pck2d_at_0_10_torso": 0.6457682437361405
+        }
+      ],
+      "by_joint": {
+        "pelvis": {
+          "count": 160727,
+          "mean_nme": 0.3150613307952881,
+          "median_nme": 0.1408664435148239,
+          "p90_nme": 0.27824753522872925
+        },
+        "r_hip": {
+          "count": 160727,
+          "mean_nme": 0.34557101130485535,
+          "median_nme": 0.1611863225698471,
+          "p90_nme": 0.3457905054092407
+        },
+        "r_knee": {
+          "count": 160727,
+          "mean_nme": 0.2919328808784485,
+          "median_nme": 0.10371212661266327,
+          "p90_nme": 0.30927854776382446
+        },
+        "r_ankle": {
+          "count": 160727,
+          "mean_nme": 0.31517118215560913,
+          "median_nme": 0.0943131223320961,
+          "p90_nme": 0.37113282084465027
+        },
+        "l_hip": {
+          "count": 160727,
+          "mean_nme": 0.33139654994010925,
+          "median_nme": 0.15153847634792328,
+          "p90_nme": 0.3330638110637665
+        },
+        "l_knee": {
+          "count": 160727,
+          "mean_nme": 0.30320030450820923,
+          "median_nme": 0.10372970253229141,
+          "p90_nme": 0.3151399493217468
+        },
+        "l_ankle": {
+          "count": 160727,
+          "mean_nme": 0.3239091634750366,
+          "median_nme": 0.095432810485363,
+          "p90_nme": 0.393265038728714
+        },
+        "neck": {
+          "count": 160727,
+          "mean_nme": 0.2999190092086792,
+          "median_nme": 0.1325569748878479,
+          "p90_nme": 0.2292507141828537
+        },
+        "head": {
+          "count": 160727,
+          "mean_nme": 0.40254268050193787,
+          "median_nme": 0.24692782759666443,
+          "p90_nme": 0.36858877539634705
+        },
+        "l_shoulder": {
+          "count": 160727,
+          "mean_nme": 0.28554847836494446,
+          "median_nme": 0.09398145973682404,
+          "p90_nme": 0.2277964949607849
+        },
+        "l_elbow": {
+          "count": 160727,
+          "mean_nme": 0.31028473377227783,
+          "median_nme": 0.09236819297075272,
+          "p90_nme": 0.31648847460746765
+        },
+        "l_wrist": {
+          "count": 160727,
+          "mean_nme": 0.318050354719162,
+          "median_nme": 0.07935869693756104,
+          "p90_nme": 0.4302521347999573
+        },
+        "r_shoulder": {
+          "count": 160727,
+          "mean_nme": 0.2792322635650635,
+          "median_nme": 0.09495498985052109,
+          "p90_nme": 0.23257531225681305
+        },
+        "r_elbow": {
+          "count": 160727,
+          "mean_nme": 0.3139340579509735,
+          "median_nme": 0.09151741117238998,
+          "p90_nme": 0.3296060264110565
+        },
+        "r_wrist": {
+          "count": 160727,
+          "mean_nme": 0.3131506145000458,
+          "median_nme": 0.07595968246459961,
+          "p90_nme": 0.41910484433174133
+        }
+      },
+      "by_subject": {
+        "S1": {
+          "samples": 20216,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.37789714336395264,
+          "median_common12_nme": 0.11684677004814148
+        },
+        "S2": {
+          "samples": 20144,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.365795761346817,
+          "median_common12_nme": 0.10464304685592651
+        },
+        "S3": {
+          "samples": 19824,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.2990127503871918,
+          "median_common12_nme": 0.09898485243320465
+        },
+        "S4": {
+          "samples": 20560,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.36784762144088745,
+          "median_common12_nme": 0.1014070063829422
+        },
+        "S5": {
+          "samples": 20112,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.2946377694606781,
+          "median_common12_nme": 0.08913657069206238
+        },
+        "S6": {
+          "samples": 19736,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.21250368654727936,
+          "median_common12_nme": 0.10025280714035034
+        },
+        "S7": {
+          "samples": 20096,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.18962949514389038,
+          "median_common12_nme": 0.0987735390663147
+        },
+        "S8": {
+          "samples": 20040,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.37669289112091064,
+          "median_common12_nme": 0.10468985140323639
+        }
+      },
+      "by_camera": {
+        "0": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.25168082118034363,
+          "median_common12_nme": 0.10294748842716217
+        },
+        "1": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.28398677706718445,
+          "median_common12_nme": 0.10410018265247345
+        },
+        "2": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.3370234966278076,
+          "median_common12_nme": 0.10249288380146027
+        },
+        "4": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.41598275303840637,
+          "median_common12_nme": 0.11012950539588928
+        },
+        "5": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.19741585850715637,
+          "median_common12_nme": 0.09450311958789825
+        },
+        "6": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.21117688715457916,
+          "median_common12_nme": 0.10064449906349182
+        },
+        "7": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.5945147275924683,
+          "median_common12_nme": 0.1077008843421936
+        },
+        "8": {
+          "samples": 20091,
+          "detection_success_rate": 1.0,
+          "mean_common12_nme": 0.1958008110523224,
+          "median_common12_nme": 0.09305219352245331
+        }
+      }
+    },
+    "yolo11l_pose": {
+      "detector_id": "yolo11l_pose",
+      "samples": 160728,
+      "detected_samples": 159373,
+      "detection_success_rate": 0.9915696082823154,
+      "common12": {
+        "finite_fraction": 0.991563386591011,
+        "mean_nme": 0.2675004303455353,
+        "median_nme": 0.11568433046340942,
+        "pck2d_at_0_05_torso_pct": 15.2374632934267,
+        "pck2d_at_0_10_torso_pct": 42.60702423679609,
+        "p90_nme": 0.4221089482307434,
+        "p95_nme": 0.7624193429946899
+      },
+      "full15": {
+        "finite_fraction": 0.991563386591011,
+        "mean_nme": 0.2669423222541809,
+        "median_nme": 0.12628912925720215,
+        "pck2d_at_0_05_torso_pct": 13.17295384383706,
+        "pck2d_at_0_10_torso_pct": 38.15438094520995,
+        "p90_nme": 0.386467844247818,
+        "p95_nme": 0.698356568813324
+      },
+      "confidence_error_correlation": 0.2967473075602845,
+      "confidence_calibration_ece_at_0_10_torso": 0.47012727228960527,
+      "confidence_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 42050,
+          "mean_confidence": 0.04622017592191696,
+          "mean_nme": 1.8832353353500366,
+          "median_nme": 0.7279114723205566,
+          "p90_nme": 5.554477214813232,
+          "p95_nme": 7.622931957244873,
+          "pck2d_at_0_10_torso": 0.061236623067776455
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 33758,
+          "mean_confidence": 0.14879272878170013,
+          "mean_nme": 1.2312016487121582,
+          "median_nme": 0.33741074800491333,
+          "p90_nme": 4.2059855461120605,
+          "p95_nme": 6.63202428817749,
+          "pck2d_at_0_10_torso": 0.12189703181468096
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 29708,
+          "mean_confidence": 0.24952837824821472,
+          "mean_nme": 0.8384581208229065,
+          "median_nme": 0.2761997878551483,
+          "p90_nme": 1.805249571800232,
+          "p95_nme": 4.688446044921875,
+          "pck2d_at_0_10_torso": 0.14642520533189712
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 28126,
+          "mean_confidence": 0.3495142459869385,
+          "mean_nme": 0.7239307165145874,
+          "median_nme": 0.2567939758300781,
+          "p90_nme": 1.3708610534667969,
+          "p95_nme": 3.8429994583129883,
+          "pck2d_at_0_10_torso": 0.16166536300931522
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 27776,
+          "mean_confidence": 0.45014050602912903,
+          "mean_nme": 0.6022817492485046,
+          "median_nme": 0.23211032152175903,
+          "p90_nme": 1.0611414909362793,
+          "p95_nme": 2.3240292072296143,
+          "pck2d_at_0_10_torso": 0.18339573732718895
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 29564,
+          "mean_confidence": 0.5509954690933228,
+          "mean_nme": 0.5143633484840393,
+          "median_nme": 0.2201625257730484,
+          "p90_nme": 0.9511200785636902,
+          "p95_nme": 1.8402718305587769,
+          "pck2d_at_0_10_torso": 0.20619672574753078
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 32820,
+          "mean_confidence": 0.6511479020118713,
+          "mean_nme": 0.4958150088787079,
+          "median_nme": 0.20464667677879333,
+          "p90_nme": 0.9283545017242432,
+          "p95_nme": 1.6824181079864502,
+          "pck2d_at_0_10_torso": 0.23366849482023155
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 45802,
+          "mean_confidence": 0.754379391670227,
+          "mean_nme": 0.41043326258659363,
+          "median_nme": 0.17522908747196198,
+          "p90_nme": 0.8520827889442444,
+          "p95_nme": 1.4651044607162476,
+          "pck2d_at_0_10_torso": 0.2855988821448845
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 102022,
+          "mean_confidence": 0.859078586101532,
+          "mean_nme": 0.32755619287490845,
+          "median_nme": 0.14651638269424438,
+          "p90_nme": 0.6784296631813049,
+          "p95_nme": 1.127603530883789,
+          "pck2d_at_0_10_torso": 0.3429946482131305
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 1540838,
+          "mean_confidence": 0.983953058719635,
+          "mean_nme": 0.15909327566623688,
+          "median_nme": 0.10456439852714539,
+          "p90_nme": 0.2741445004940033,
+          "p95_nme": 0.4252442419528961,
+          "pck2d_at_0_10_torso": 0.4752764404823869
+        }
+      ],
+      "by_joint": {
+        "pelvis": {
+          "count": 159372,
+          "mean_nme": 0.24825866520404816,
+          "median_nme": 0.14697283506393433,
+          "p90_nme": 0.28884217143058777
+        },
+        "r_hip": {
+          "count": 159372,
+          "mean_nme": 0.2819022238254547,
+          "median_nme": 0.1697092056274414,
+          "p90_nme": 0.36987265944480896
+        },
+        "r_knee": {
+          "count": 159372,
+          "mean_nme": 0.2595345079898834,
+          "median_nme": 0.11710789799690247,
+          "p90_nme": 0.43791279196739197
+        },
+        "r_ankle": {
+          "count": 159372,
+          "mean_nme": 0.28988105058670044,
+          "median_nme": 0.1090100035071373,
+          "p90_nme": 0.543378472328186
+        },
+        "l_hip": {
+          "count": 159372,
+          "mean_nme": 0.2674572765827179,
+          "median_nme": 0.1576603502035141,
+          "p90_nme": 0.34489431977272034
+        },
+        "l_knee": {
+          "count": 159372,
+          "mean_nme": 0.2654764950275421,
+          "median_nme": 0.12240083515644073,
+          "p90_nme": 0.44065606594085693
+        },
+        "l_ankle": {
+          "count": 159372,
+          "mean_nme": 0.29915833473205566,
+          "median_nme": 0.11322574317455292,
+          "p90_nme": 0.5705525875091553
+        },
+        "neck": {
+          "count": 159372,
+          "mean_nme": 0.22443722188472748,
+          "median_nme": 0.13708369433879852,
+          "p90_nme": 0.23082709312438965
+        },
+        "head": {
+          "count": 159372,
+          "mean_nme": 0.3214338719844818,
+          "median_nme": 0.24424976110458374,
+          "p90_nme": 0.3543333113193512
+        },
+        "l_shoulder": {
+          "count": 159372,
+          "mean_nme": 0.20486797392368317,
+          "median_nme": 0.09237857162952423,
+          "p90_nme": 0.24543984234333038
+        },
+        "l_elbow": {
+          "count": 159372,
+          "mean_nme": 0.2662513554096222,
+          "median_nme": 0.10940320789813995,
+          "p90_nme": 0.4055803120136261
+        },
+        "l_wrist": {
+          "count": 159372,
+          "mean_nme": 0.3011568486690521,
+          "median_nme": 0.10700514912605286,
+          "p90_nme": 0.5439483523368835
+        },
+        "r_shoulder": {
+          "count": 159372,
+          "mean_nme": 0.2064773142337799,
+          "median_nme": 0.09267893433570862,
+          "p90_nme": 0.25499245524406433
+        },
+        "r_elbow": {
+          "count": 159372,
+          "mean_nme": 0.2692810893058777,
+          "median_nme": 0.10750614106655121,
+          "p90_nme": 0.42869463562965393
+        },
+        "r_wrist": {
+          "count": 159372,
+          "mean_nme": 0.2985609769821167,
+          "median_nme": 0.10033160448074341,
+          "p90_nme": 0.561041533946991
+        }
+      },
+      "by_subject": {
+        "S1": {
+          "samples": 20216,
+          "detection_success_rate": 0.9929758607043926,
+          "mean_common12_nme": 0.3317614793777466,
+          "median_common12_nme": 0.13721342384815216
+        },
+        "S2": {
+          "samples": 20144,
+          "detection_success_rate": 0.9839158061953932,
+          "mean_common12_nme": 0.30139973759651184,
+          "median_common12_nme": 0.11833357810974121
+        },
+        "S3": {
+          "samples": 19824,
+          "detection_success_rate": 0.9957627118644068,
+          "mean_common12_nme": 0.2988831400871277,
+          "median_common12_nme": 0.11432448029518127
+        },
+        "S4": {
+          "samples": 20560,
+          "detection_success_rate": 0.996352140077821,
+          "mean_common12_nme": 0.3233349025249481,
+          "median_common12_nme": 0.12129061669111252
+        },
+        "S5": {
+          "samples": 20112,
+          "detection_success_rate": 0.9869729514717581,
+          "mean_common12_nme": 0.20646239817142487,
+          "median_common12_nme": 0.09971725195646286
+        },
+        "S6": {
+          "samples": 19736,
+          "detection_success_rate": 0.9970612079448723,
+          "mean_common12_nme": 0.20307092368602753,
+          "median_common12_nme": 0.10891255736351013
+        },
+        "S7": {
+          "samples": 20096,
+          "detection_success_rate": 0.9982085987261147,
+          "mean_common12_nme": 0.21383236348628998,
+          "median_common12_nme": 0.1159650906920433
+        },
+        "S8": {
+          "samples": 20040,
+          "detection_success_rate": 0.9813373253493014,
+          "mean_common12_nme": 0.2589050829410553,
+          "median_common12_nme": 0.11580781638622284
+        }
+      },
+      "by_camera": {
+        "0": {
+          "samples": 20091,
+          "detection_success_rate": 0.9992533970434523,
+          "mean_common12_nme": 0.2671915590763092,
+          "median_common12_nme": 0.11821268498897552
+        },
+        "1": {
+          "samples": 20091,
+          "detection_success_rate": 0.9972624558259917,
+          "mean_common12_nme": 0.24587073922157288,
+          "median_common12_nme": 0.12223544716835022
+        },
+        "2": {
+          "samples": 20091,
+          "detection_success_rate": 0.9934796675128167,
+          "mean_common12_nme": 0.33470964431762695,
+          "median_common12_nme": 0.11872368305921555
+        },
+        "4": {
+          "samples": 20091,
+          "detection_success_rate": 0.988950276243094,
+          "mean_common12_nme": 0.33691269159317017,
+          "median_common12_nme": 0.12433019280433655
+        },
+        "5": {
+          "samples": 20091,
+          "detection_success_rate": 0.9984072470260316,
+          "mean_common12_nme": 0.2253236323595047,
+          "median_common12_nme": 0.10582589358091354
+        },
+        "6": {
+          "samples": 20091,
+          "detection_success_rate": 0.996316758747698,
+          "mean_common12_nme": 0.2175658494234085,
+          "median_common12_nme": 0.11821816116571426
+        },
+        "7": {
+          "samples": 20091,
+          "detection_success_rate": 0.9638146433726544,
+          "mean_common12_nme": 0.30741745233535767,
+          "median_common12_nme": 0.1184738427400589
+        },
+        "8": {
+          "samples": 20091,
+          "detection_success_rate": 0.9950724204867851,
+          "mean_common12_nme": 0.20705106854438782,
+          "median_common12_nme": 0.10296796262264252
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1d_run_report_v1",
+  "phase": "9C-R1D",
+  "scientific_role": "locked_multisplit_multiseed_confirmation_and_post_selection_development_test",
+  "split": "split_c",
+  "seed": 2026,
+  "arm": "bounded_reliability_dual_modulation",
+  "train_detector": "rtmpose_performance",
+  "best_epoch": 43,
+  "epochs_completed": 50,
+  "best_validation_selection_score": 91.12803315427536,
+  "checkpoint_selection": "matched_validation_geometric_mean_mpjpe_pa_mpjpe",
+  "feature_dim": 126,
+  "trainable_parameters": 109610,
+  "evaluations": {
+    "rtmpose_performance": {
+      "val": {
+        "mpjpe_mm": 110.22873894704746,
+        "pa_mpjpe_mm": 75.33714443159874,
+        "samples": 19678,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_val.npz",
+        "per_sample_sha256": "52b2e0d588844f95a2a59a29c1a41af3b492da7e26a542bf76e8a365fb6a10e2"
+      },
+      "test": {
+        "mpjpe_mm": 121.43601461241276,
+        "pa_mpjpe_mm": 79.6123021560319,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_test.npz",
+        "per_sample_sha256": "4616d510f5dc5f0890889d72fcec68797b3ea3e8f414ad9024359e7b9cb86dab"
+      }
+    },
+    "yolo11l_pose": {
+      "val": {
+        "mpjpe_mm": 148.81356559355626,
+        "pa_mpjpe_mm": 100.98820422870719,
+        "samples": 19678,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_val.npz",
+        "per_sample_sha256": "739e26866215b1414a094f191cbb9018be8cfc037bdef79399f60c13e29e830e"
+      },
+      "test": {
+        "mpjpe_mm": 158.61560474825524,
+        "pa_mpjpe_mm": 103.21205212487537,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_test.npz",
+        "per_sample_sha256": "f0f8d552300815a1f6754948ad9b42571fa04967ec27768df324e793baea47f4"
+      }
+    }
+  },
+  "test_metrics_computed": true,
+  "test_used_for_selection": false,
+  "protocol_sha256": "152dcaa36ac1b0cf565a3b5301e91448614af17c26fe5f90bf973fd21c5e56b6",
+  "artifact_hashes": [
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_val.npz",
+      "sha256": "52b2e0d588844f95a2a59a29c1a41af3b492da7e26a542bf76e8a365fb6a10e2"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_test.npz",
+      "sha256": "4616d510f5dc5f0890889d72fcec68797b3ea3e8f414ad9024359e7b9cb86dab"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_val.npz",
+      "sha256": "739e26866215b1414a094f191cbb9018be8cfc037bdef79399f60c13e29e830e"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_test.npz",
+      "sha256": "f0f8d552300815a1f6754948ad9b42571fa04967ec27768df324e793baea47f4"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\best.pt",
+      "sha256": "1852009d4aec6413c4338cd224492b125058b045d15d17e0a15538296687bf96"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\last.pt",
+      "sha256": "bd37dc60398a9f2ae2d32be697d23f18a96491bcff561b9a510c7a0b0d1a8670"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\bounded_reliability_dual_modulation\\train_rtmpose_performance\\training_history.csv",
+      "sha256": "8c3b539fb9d7aa093c0ef234f49d9f3c9577599fb61bbf72defb479be3d0218d"
+    }
+  ],
+  "elapsed_sec": 349.1550130844116,
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false
+}

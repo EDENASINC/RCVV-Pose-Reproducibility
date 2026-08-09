@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1d_qc_report_v2_evidence_contract_repair",
+  "phase": "9C-R1D",
+  "repair_note": "training_history.csv is the authoritative hashed epoch-history artifact; no training result or scientific gate was changed",
+  "scientific_decision": "STOP_AND_REASSESS_BEFORE_OFFICIAL_TEST",
+  "checks": [
+    {
+      "name": "protocol_and_preflight",
+      "passed": true,
+      "detail": "protocol=LOCKED; preflight=PASS"
+    },
+    {
+      "name": "split_reports",
+      "passed": true,
+      "detail": "count=3"
+    },
+    {
+      "name": "full_cohort_and_worker_integrity",
+      "passed": true,
+      "detail": "3 splits; workers=8; no sample limits"
+    },
+    {
+      "name": "run_report_count",
+      "passed": true,
+      "detail": "count=54"
+    },
+    {
+      "name": "run_matrix_exact",
+      "passed": true,
+      "detail": "missing=0; extra=0"
+    },
+    {
+      "name": "run_and_artifact_integrity",
+      "passed": true,
+      "detail": "artifacts=378"
+    },
+    {
+      "name": "metric_rows_finite",
+      "passed": true,
+      "detail": "rows=216"
+    },
+    {
+      "name": "per_sample_pairing_and_metric_reconstruction",
+      "passed": true,
+      "detail": "paired_units=72/72"
+    },
+    {
+      "name": "paired_statistics_complete",
+      "passed": true,
+      "detail": "comparisons=6"
+    }
+  ],
+  "errors": [],
+  "run_reports": 54,
+  "metric_rows": 216,
+  "artifact_hash_rows": 378,
+  "protocol_sha256": "152dcaa36ac1b0cf565a3b5301e91448614af17c26fe5f90bf973fd21c5e56b6",
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false
+}

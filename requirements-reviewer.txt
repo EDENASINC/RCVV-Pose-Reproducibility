@@ -1,0 +1,9 @@
+# Replace this file with an exact lock exported from the experiment environment.
+# Versions below are recorded by the supplied evidence, not a complete install recipe.
+numpy
+scipy
+# Recorded build: torch 2.13.0+cu130. Add its original package index/install command.
+torch
+onnxruntime-gpu==1.28.0
+rtmlib==0.0.15
+ultralytics==8.4.112

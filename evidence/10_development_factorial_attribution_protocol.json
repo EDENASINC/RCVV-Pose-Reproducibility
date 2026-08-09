@@ -1,0 +1,92 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1e_synergy_attribution_protocol_v1",
+  "phase": "9C-R1E",
+  "title": "Factorial Reliability-Virtual-View Synergy Attribution",
+  "scientific_role": "predeclared mechanistic reassessment after R1D showed a positive full method but a negative ungated virtual-view ablation",
+  "source_r1d_required_qc_status": "PASS",
+  "source_r1d_required_decision": "STOP_AND_REASSESS_BEFORE_OFFICIAL_TEST",
+  "source_r1d_protocol_sha256": "152dcaa36ac1b0cf565a3b5301e91448614af17c26fe5f90bf973fd21c5e56b6",
+  "source_b1_script_sha256": "fc1ae8f11ec6fb1b75c8d8c730e61a67f1b1aa45422227364e4bce71eb72b673",
+  "source_r1a_protocol_sha256": "dc5cd89da6addb3458ee0da6ea90ed995d041747ea06815822b798a5c863187e",
+  "development_scope": {
+    "splits": ["split_a", "split_b", "split_c"],
+    "seeds": [42, 123, 2026],
+    "detectors": ["rtmpose_performance", "yolo11l_pose"],
+    "partitions": ["train", "val", "test"],
+    "checkpoint_selection_partition": "matched_detector_validation_only",
+    "test_role": "post_selection_mechanistic_confirmation_only",
+    "test_used_for_checkpoint_or_arm_selection": false
+  },
+  "arms": ["bounded_reliability_observed_modulation"],
+  "factorial_arms_for_analysis": {
+    "observed_only": "detector_aware_observed",
+    "observed_plus_virtual_ungated": "detector_conditioned_virtual_view_no_confidence",
+    "observed_plus_reliability_no_virtual": "bounded_reliability_observed_modulation",
+    "observed_plus_virtual_plus_reliability": "bounded_reliability_dual_modulation"
+  },
+  "feature_lock": {
+    "bounded_reliability_observed_modulation": 70,
+    "definition": "observed || reliability*observed || reliability",
+    "raw_residual_risk_as_model_input": false,
+    "bounded_reliability_range": [0.0, 1.0]
+  },
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "calibration_and_risk_policy": {
+    "calibration_model_must_match_cross_subject_split": true,
+    "residual_risk_bank_must_match_cross_subject_split": true,
+    "risk_bounding": "quality=1/(1+risk/train_bank_joint_median_positive_risk)",
+    "joint_reliability": "clip(calibrated_probability*quality,0,1)",
+    "risk_scale_floor": 0.000001
+  },
+  "training_budget": {
+    "strict_device": "cuda:0",
+    "num_workers": 8,
+    "batch_size": 2048,
+    "eval_batch_size": 2048,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "hidden_width": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "max_train_samples": 0,
+    "max_eval_samples": 0
+  },
+  "run_matrix": {
+    "splits": 3,
+    "seeds": 3,
+    "detectors": 2,
+    "new_arms": 1,
+    "new_training_runs": 18,
+    "reused_r1d_training_runs": 54
+  },
+  "predeclared_comparisons": {
+    "conditional_virtual_contribution": "full_method minus reliability_observed_only on matched development test",
+    "reliability_only_contribution": "reliability_observed_only minus observed_only on matched development test",
+    "virtual_reliability_interaction": "conditional_virtual_effect minus ungated_virtual_effect as a paired difference-in-differences"
+  },
+  "statistical_policy": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260803,
+    "confidence_level": 0.95,
+    "hierarchy": ["split", "seed", "detector"],
+    "paired_unit_count": 18,
+    "reported_metrics": ["MPJPE", "PA-MPJPE"],
+    "strong_gate_requires_positive_ci_for_full_vs_observed_conditional_virtual_and_interaction": true,
+    "minimum_splits_with_both_metric_conditional_virtual_wins": 2,
+    "require_both_detectors_mean_both_metric_conditional_virtual_win": true
+  },
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "next_gate": {
+    "strong": "READY_FOR_PHASE9C_R1F_OFFICIAL_TEST_Q1_Q2_STRONG_SYNERGY",
+    "cautionary": "READY_FOR_PHASE9C_R1F_OFFICIAL_TEST_Q2_CAUTIOUS_SYNERGY",
+    "redesign": "STOP_AND_REDESIGN_VIRTUAL_VIEW_CONTRIBUTION"
+  }
+}

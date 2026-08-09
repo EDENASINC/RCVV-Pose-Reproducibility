@@ -1,0 +1,105 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_b2_full_protocol_lock_v1",
+  "phase": "9C-B2",
+  "title": "Full Multisplit-Multiseed Real-Detector Confidence-Aware Virtual-View Study",
+  "scientific_role": "development_full_training_and_post_selection_robustness",
+  "source_gate": "READY_FOR_PHASE9C_B2_FULL_MULTISPLIT_MULTISEED_TRAINING",
+  "source_b1_script_sha256": "fc1ae8f11ec6fb1b75c8d8c730e61a67f1b1aa45422227364e4bce71eb72b673",
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "development_scope": {
+    "splits": ["split_a", "split_b", "split_c"],
+    "seeds": [42, 123, 2026],
+    "partitions": ["train", "val", "test"],
+    "test_role": "post_selection_cross_split_robustness_only"
+  },
+  "arms": [
+    "clean_observed_legacy",
+    "detector_aware_observed",
+    "virtual_view_no_confidence",
+    "calibrated_confidence_virtual_view"
+  ],
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "run_matrix": {
+    "clean_runs": 9,
+    "detector_dependent_runs": 54,
+    "total_training_runs": 63,
+    "expected_metric_rows": 234
+  },
+  "training_budget": {
+    "num_workers": 8,
+    "batch_size": 2048,
+    "eval_batch_size": 2048,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "hidden_width": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "max_train_samples": 0,
+    "max_eval_samples": 0
+  },
+  "model_lock": {
+    "architecture": "phase9c_b1_v3_TinyPoseLifter",
+    "same_architecture_as_smoke": true,
+    "checkpoint_selection": "minimum_matched_validation_geometric_mean_mpjpe_pa_mpjpe",
+    "test_used_for_checkpoint_selection": false
+  },
+  "windows_spawn_resource_policy": {
+    "num_workers": 8,
+    "materialize_full_split_in_main_process": true,
+    "materialization_workers": 0,
+    "preallocated_materialization": true,
+    "detector_cache_in_workers": false,
+    "training_shard_io_in_workers": false,
+    "persistent_workers": false,
+    "prefetch_factor": 1,
+    "worker_cpu_threads": 1
+  },
+  "detector_missingness_policy": {
+    "primary_metric_cohort": "paired_common_detection",
+    "same_sample_cohort_across_arms_and_detectors": true,
+    "exclude_only_if_any_detector_failed_or_nonfinite": true,
+    "report_detection_coverage_separately": true,
+    "ground_truth_imputation_for_detector_failures": false
+  },
+  "calibration_and_risk_policy": {
+    "calibration_model_must_match_cross_subject_split": true,
+    "residual_risk_bank_must_match_cross_subject_split": true,
+    "split_to_residual_risk_index": {
+      "split_a": 0,
+      "split_b": 1,
+      "split_c": 2
+    }
+  },
+  "predeclared_comparisons": {
+    "primary": "calibrated_confidence_virtual_view_vs_detector_aware_observed_matched_detector_test",
+    "confidence_ablation": "calibrated_confidence_virtual_view_vs_virtual_view_no_confidence_matched_detector_test",
+    "virtual_view_ablation": "virtual_view_no_confidence_vs_detector_aware_observed_matched_detector_test",
+    "secondary": "all_three_comparisons_cross_detector_test",
+    "clean_observed_legacy_role": "paired_cohort_upper_reference_not_primary_baseline"
+  },
+  "statistical_policy": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260802,
+    "confidence_level": 0.95,
+    "hierarchy": ["split", "seed", "detector"],
+    "reported_metrics": ["MPJPE", "PA-MPJPE"],
+    "minimum_primary_macro_mpjpe_gain_percent": 5.0,
+    "minimum_splits_with_both_metric_wins": 2,
+    "require_both_detectors_mean_both_metric_wins": true,
+    "q1_q2_strong_gate_requires_positive_ci_for_both_metrics": true,
+    "confidence_ablation_strong_gate_requires_positive_ci_for_both_metrics": true
+  },
+  "next_gate": {
+    "strong": "READY_FOR_PHASE9C_B3_Q1_Q2_DETECTOR_CLAIM_LOCK",
+    "cautionary": "READY_FOR_PHASE9C_B3_Q2_CAUTIONARY_CLAIM_LOCK",
+    "redesign": "REDESIGN_CONFIDENCE_FUSION_BEFORE_OFFICIAL_TEST"
+  }
+}

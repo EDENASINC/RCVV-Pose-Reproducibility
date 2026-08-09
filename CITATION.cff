@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or model package, please cite the associated article."
+title: "RCVV-Pose: Reliability-Conditioned Virtual-View Pose Fusion"
+type: software
+authors:
+  - family-names: Nilkhet
+    given-names: Phalakron
+  - family-names: Theeramunkong
+    given-names: Thanaruk
+version: 1.0.0
+date-released: 2026-08-09
+repository-code: "https://github.com/OWNER/rcvv-pose"
+preferred-citation:
+  type: article
+  title: "Reliability-Conditioned Virtual-View Pose Fusion for Monocular 3D Human Pose Estimation with Real 2D Detector Inputs"
+  authors:
+    - family-names: Nilkhet
+      given-names: Phalakron
+    - family-names: Theeramunkong
+      given-names: Thanaruk
+  journal: Information
+  notes: "Manuscript information-4512788; update volume, issue, pages, DOI, and year after publication."

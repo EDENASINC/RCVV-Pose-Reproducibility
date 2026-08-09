@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1f_qc_report_v1",
+  "phase": "9C-R1F",
+  "scientific_decision": "OFFICIAL_TREND_ONLY_WRITE_Q2_CAUTIOUS",
+  "protocol_sha256": "7f07ce67ff926d7e071ec67d84481a43d24d5396f91bfb557b8d9bab30c7d2c1",
+  "required_artifacts": 10,
+  "official_result_locked": true,
+  "errors": []
+}

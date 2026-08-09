@@ -1,0 +1,71 @@
+{
+  "format": "phase9b_rgb_alignment_preflight_v1",
+  "phase": "9B",
+  "status": "PASS",
+  "project_root": "D:\\Research\\vv_pose_project",
+  "resolved_roots": {
+    "raw_training_rgb": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp",
+    "processed_c15": "D:\\Research\\vv_pose_project\\data\\processed\\per_dataset\\mpi_inf_3dhp"
+  },
+  "media_mode": "decoded_video",
+  "sampling_policy": {
+    "deterministic_sampling_hz": 5.0,
+    "selection": "frame indices 0, step, 2*step, ... independently per subject/sequence/camera; step=round(sequence_fps/target_hz)",
+    "total_media_frames": 1052736,
+    "total_selected_frames": 160728,
+    "rgb_recompression_performed": false
+  },
+  "protocol": {
+    "official_TS1_to_TS6_read": false,
+    "model_training_performed": false,
+    "ground_truth_assisted_person_selection": false
+  },
+  "counts": {
+    "images_found": 0,
+    "videos_found": 128,
+    "media_frames": 1052736,
+    "selected_frames": 160728,
+    "matched_images": 160728,
+    "alignment_fraction": 1.0,
+    "subjects": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8"
+    ],
+    "subject_count": 8,
+    "subject_sequence_count": 16,
+    "cameras": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "camera_count": 8,
+    "duplicate_image_identities_skipped": 0
+  },
+  "coverage_interpretation": "multi_camera_rgb_subset",
+  "finite_torso_fraction": 0.9999937783086954,
+  "in_frame_joint_fraction": 0.9595988253446817,
+  "errors": [],
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+    "numpy": "2.5.1",
+    "torch": "2.13.0+cu130",
+    "rtmlib": "0.0.15",
+    "ultralytics": "8.4.112",
+    "onnxruntime_gpu": "1.28.0",
+    "opencv_python": "5.0.0.93",
+    "opencv_contrib_python": null,
+    "opencv_python_headless": null
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1a_detector_conditioned_cache_protocol_lock_v1",
+  "phase": "9C-R1A",
+  "title": "Detector-Conditioned Virtual-View Cache Repair",
+  "scientific_role": "pipeline_provenance_repair_without_3d_metric_selection",
+  "source_phase9c_b2_decision": "REDESIGN_CONFIDENCE_FUSION_BEFORE_OFFICIAL_TEST",
+  "repair_reason": {
+    "legacy_virtual_source": "target_pose2d_camera_root_ground_truth",
+    "required_virtual_source": "phase9b_prediction_c15_px_real_detector",
+    "risk": "The Phase 9C-B2 virtual branch used a clean-2D-conditioned virtual pose and therefore cannot support a deployable real-detector virtual-view claim."
+  },
+  "source_b1_script_sha256": "fc1ae8f11ec6fb1b75c8d8c730e61a67f1b1aa45422227364e4bce71eb72b673",
+  "splits": ["split_a", "split_b", "split_c"],
+  "partitions": ["train", "val", "test"],
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "virtual_camera_candidate": "rotation_yaw_m15",
+  "detector_input_policy": {
+    "primary_cohort": "paired_common_detection",
+    "input_tensor": "phase9b_detector_cache.prediction_c15_px",
+    "pixel_to_camera_normalization": "inverse_intrinsic_then_root_center",
+    "ground_truth_2d_allowed_as_generator_input": false,
+    "ground_truth_3d_metrics_computed": false,
+    "same_sample_cohort_across_detectors": true
+  },
+  "generator_policy": {
+    "architecture": "locked_geometry_conditioned_virtual_view_generator",
+    "training_partition": "subject_out_of_fold_holdout_generator",
+    "validation_partition": "full_train_generator",
+    "development_test_partition": "full_train_generator",
+    "generator_finetuning": false,
+    "candidate_selection_in_this_phase": false
+  },
+  "compute_policy": {
+    "device": "cuda:0",
+    "strict_gpu": true,
+    "source_batch_size": 2048,
+    "storage_dtype": "float16",
+    "resume_completed_split_cache": true
+  },
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "qc_requirements": {
+    "all_cache_values_finite": true,
+    "root_joint_exactly_zero": true,
+    "detector_conditioned_differs_from_legacy_clean_conditioned": true,
+    "two_detectors_produce_nonidentical_virtual_views": true,
+    "no_3d_metric_rows": true,
+    "artifact_hashes_required": true
+  },
+  "next_gate": {
+    "pass": "READY_FOR_PHASE9C_R1B_DETECTOR_CONDITIONED_SMOKE",
+    "fail": "REPAIR_PHASE9C_R1A_BEFORE_ANY_FURTHER_TRAINING"
+  }
+}

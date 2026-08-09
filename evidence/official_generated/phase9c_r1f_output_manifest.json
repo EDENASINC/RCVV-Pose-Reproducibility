@@ -1,0 +1,55 @@
+{
+  "format": "phase9c_r1f_output_manifest_v1",
+  "files": [
+    {
+      "relative_path": "phase9c_r1f_preflight_report.json",
+      "size_bytes": 3700,
+      "sha256": "db12e6b4bb69998cc34df39b40cdeed0aa4715e504c6c2d24561e763d71ad977"
+    },
+    {
+      "relative_path": "phase9c_r1f_checkpoint_inventory.csv",
+      "size_bytes": 33317,
+      "sha256": "7d26a32686ee4c875d1e3f5c46ef34caad27d31327bdc0d3a4b0c7af0cdc71bf"
+    },
+    {
+      "relative_path": "phase9c_r1f_detector_cache_report.json",
+      "size_bytes": 3077,
+      "sha256": "9f1f9ab05e057fe950eb525f9e4f57abae6c92e66fa34be33fe5759d8824aef5"
+    },
+    {
+      "relative_path": "phase9c_r1f_official_detector_cache.npz",
+      "size_bytes": 859977,
+      "sha256": "8c34d0462cfd4458e57f9e194f9666d4711c7d131bec34498934e0e197c8f711"
+    },
+    {
+      "relative_path": "phase9c_r1f_official_test_summary.json",
+      "size_bytes": 10837,
+      "sha256": "157016f1741bf4fb890e2f45b6bb4e7a67b4f8be31acfa7a2f4e5ec35b95aa45"
+    },
+    {
+      "relative_path": "phase9c_r1f_official_result_lock.json",
+      "size_bytes": 788,
+      "sha256": "37634701e3fff1cee0d9b989882c627ccde32f67d4a19ef69e14743561990ad7"
+    },
+    {
+      "relative_path": "phase9c_r1f_subject_system_metrics.csv",
+      "size_bytes": 65389,
+      "sha256": "0069948a001a53bf5fb1e9997eba690d189d31cc1c47797a50ac988d6f599f84"
+    },
+    {
+      "relative_path": "phase9c_r1f_activity_metrics_descriptive.csv",
+      "size_bytes": 2294,
+      "sha256": "7258d27aed50592a725e628d10c057b7f852a57edc23ae4400de88115d14786a"
+    },
+    {
+      "relative_path": "phase9c_r1f_per_frame_errors.npz",
+      "size_bytes": 1459519,
+      "sha256": "1a60346bb7e4948f1fdab84b7bf87061d8cd8dc47cfd55cf7696461a165a43d6"
+    },
+    {
+      "relative_path": "phase9c_r1f_ensemble_predictions.npz",
+      "size_bytes": 2238287,
+      "sha256": "e41ed202294056b116399009590cdb81acb7f4af02f88ceef4db3f4afa94d2bb"
+    }
+  ]
+}

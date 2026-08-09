@@ -1,0 +1,55 @@
+{
+  "format": "phase9b_detector_runtime_v2",
+  "run_id": "full",
+  "sample_count_requested": 160728,
+  "cuda": {
+    "required": true,
+    "cpu_fallback_allowed": false,
+    "torch_available": true,
+    "torch_version": "2.13.0+cu130",
+    "torch_cuda_version": "13.0",
+    "device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "onnxruntime_version": "1.28.0",
+    "onnxruntime_available_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "detectors": {
+    "rtmpose_performance": {
+      "status": "completed_on_gpu",
+      "device": "cuda:0",
+      "cached_samples_reused": 14538,
+      "new_samples": 146190,
+      "elapsed_seconds": 16565.049521499997,
+      "new_samples_per_second": 8.825207543766052,
+      "model_files": [],
+      "execution_providers": {
+        "det_model": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ],
+        "pose_model": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ]
+      }
+    },
+    "yolo11l_pose": {
+      "status": "completed_on_gpu",
+      "device": 0,
+      "cached_samples_reused": 0,
+      "new_samples": 160728,
+      "elapsed_seconds": 10741.662419800006,
+      "new_samples_per_second": 14.963047032992916,
+      "model_files": [
+        {
+          "path": "D:\\Research\\vv_pose_project\\yolo11l-pose.pt",
+          "sha256": "61921abe1f2ed930bf28328a16b3162278cdb239a1e8280b6ac827119f13cee0"
+        }
+      ],
+      "cuda_device_name": "NVIDIA GeForce RTX 4060 Laptop GPU"
+    }
+  }
+}

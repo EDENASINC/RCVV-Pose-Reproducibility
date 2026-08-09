@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1d_run_report_v1",
+  "phase": "9C-R1D",
+  "scientific_role": "locked_multisplit_multiseed_confirmation_and_post_selection_development_test",
+  "split": "split_c",
+  "seed": 2026,
+  "arm": "detector_aware_observed",
+  "train_detector": "rtmpose_performance",
+  "best_epoch": 47,
+  "epochs_completed": 50,
+  "best_validation_selection_score": 92.11750698348149,
+  "checkpoint_selection": "matched_validation_geometric_mean_mpjpe_pa_mpjpe",
+  "feature_dim": 28,
+  "trainable_parameters": 84522,
+  "evaluations": {
+    "rtmpose_performance": {
+      "val": {
+        "mpjpe_mm": 111.64646432564285,
+        "pa_mpjpe_mm": 76.00451249491819,
+        "samples": 19678,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_rtmpose_performance_val.npz",
+        "per_sample_sha256": "17346b3a5463a5a05d750addb7f4e81b7b6626cdab7f1978207462ca3d2c5b1f"
+      },
+      "test": {
+        "mpjpe_mm": 125.58998005982053,
+        "pa_mpjpe_mm": 82.05384783150548,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_rtmpose_performance_test.npz",
+        "per_sample_sha256": "6a112588ad36c8c4f3388f5d0474315a0cc14a131e72102bb36fb295577df9bc"
+      }
+    },
+    "yolo11l_pose": {
+      "val": {
+        "mpjpe_mm": 126.05911900345563,
+        "pa_mpjpe_mm": 85.254752690187,
+        "samples": 19678,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_yolo11l_pose_val.npz",
+        "per_sample_sha256": "99ca67161299aacc94a31ce6d4506c4a88dcfd5c5353ca294e1315dcac78a45a"
+      },
+      "test": {
+        "mpjpe_mm": 138.77551564057828,
+        "pa_mpjpe_mm": 90.79750591974077,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_yolo11l_pose_test.npz",
+        "per_sample_sha256": "c30105b944911efeabed4540d68f8630ffa36989a5ddc3c0c5e7df0a03ee8939"
+      }
+    }
+  },
+  "test_metrics_computed": true,
+  "test_used_for_selection": false,
+  "protocol_sha256": "152dcaa36ac1b0cf565a3b5301e91448614af17c26fe5f90bf973fd21c5e56b6",
+  "artifact_hashes": [
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_rtmpose_performance_val.npz",
+      "sha256": "17346b3a5463a5a05d750addb7f4e81b7b6626cdab7f1978207462ca3d2c5b1f"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_rtmpose_performance_test.npz",
+      "sha256": "6a112588ad36c8c4f3388f5d0474315a0cc14a131e72102bb36fb295577df9bc"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_yolo11l_pose_val.npz",
+      "sha256": "99ca67161299aacc94a31ce6d4506c4a88dcfd5c5353ca294e1315dcac78a45a"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\per_sample_yolo11l_pose_test.npz",
+      "sha256": "c30105b944911efeabed4540d68f8630ffa36989a5ddc3c0c5e7df0a03ee8939"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\best.pt",
+      "sha256": "a33c941f14b8b542c0ef69bd5ce56f50e2e2dcf0b1f7044c0bc84e74f7d527e0"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\last.pt",
+      "sha256": "f65e766c02369070dba0a55b7066c36584491257c5e9340640f4a1e77d517858"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed2026\\detector_aware_observed\\train_rtmpose_performance\\training_history.csv",
+      "sha256": "e763aaa0481fc178662fa6602ddd9789e45a369d2892da5bc2bc31d94ff28efa"
+    }
+  ],
+  "elapsed_sec": 346.3107566833496,
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false
+}

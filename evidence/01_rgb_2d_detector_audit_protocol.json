@@ -1,0 +1,132 @@
+{
+  "format": "phase9b_rgb_detector_protocol_lock_v1",
+  "status": "LOCKED",
+  "phase": "9B",
+  "study_role": "development_rgb_to_2d_detector_benchmark_and_real_error_model_lock",
+  "research_track": "V2",
+  "trigger": {
+    "source_phase": "9A",
+    "required_decision": "READY_FOR_PHASE9B_REAL_DETECTOR_PROTOCOL",
+    "reason": "Phase 9A found MPI-INF-3DHP RGB media, relevant source code, checkpoints, and a CUDA GPU, while prior controlled-noise work showed that clean-2D gains do not automatically transfer to detector noise."
+  },
+  "data_policy": {
+    "dataset": "MPI-INF-3DHP training subjects S1-S8 only",
+    "rgb_root": "data/raw/mpi_inf_3dhp",
+    "processed_root": "data/processed/per_dataset/mpi_inf_3dhp",
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "model_training_performed": false,
+    "3d_checkpoint_selection_performed": false,
+    "rgb_bytes_in_output_zip": false,
+    "detector_predictions_may_be_cached": true
+  },
+  "detectors": [
+    {
+      "id": "rtmpose_performance",
+      "implementation": "rtmlib",
+      "package_version": "0.0.15",
+      "model_family": "RTMPose",
+      "mode": "performance",
+      "person_selection": "highest mean keypoint confidence; no ground-truth-assisted selection"
+    },
+    {
+      "id": "yolo11l_pose",
+      "implementation": "ultralytics",
+      "package_version": "8.4.112",
+      "weights": "yolo11l-pose.pt",
+      "person_selection": "highest detector confidence; no ground-truth-assisted selection"
+    }
+  ],
+  "canonical_layout": {
+    "name": "canonical_15j_v1",
+    "joint_names": [
+      "pelvis",
+      "r_hip",
+      "r_knee",
+      "r_ankle",
+      "l_hip",
+      "l_knee",
+      "l_ankle",
+      "neck",
+      "head",
+      "l_shoulder",
+      "l_elbow",
+      "l_wrist",
+      "r_shoulder",
+      "r_elbow",
+      "r_wrist"
+    ],
+    "coco17_policy": {
+      "pelvis": "midpoint(left_hip,right_hip), confidence=min",
+      "neck": "midpoint(left_shoulder,right_shoulder), confidence=min",
+      "head": "nose proxy; reported separately because anatomical definitions differ",
+      "direct_common12": [
+        "r_hip",
+        "r_knee",
+        "r_ankle",
+        "l_hip",
+        "l_knee",
+        "l_ankle",
+        "l_shoulder",
+        "l_elbow",
+        "l_wrist",
+        "r_shoulder",
+        "r_elbow",
+        "r_wrist"
+      ]
+    }
+  },
+  "alignment_policy": {
+    "identity": "subject/sequence/camera/frame",
+    "allowed_filename_to_annotation_frame_offsets": [-3, -2, -1, 0, 1, 2, 3],
+    "offset_selection": "maximize exact frame-number overlap independently for each subject/sequence/camera group",
+    "minimum_matched_images": 1000,
+    "minimum_alignment_fraction": 0.9,
+    "minimum_in_frame_joint_fraction": 0.75
+  },
+  "video_media_policy": {
+    "enabled_when_extracted_images_are_absent": true,
+    "accepted_identity_pattern": "S1-S8/Seq1-Seq2/**/video_<camera>.avi",
+    "annotation_alignment": "decoded video frame index maps to the same zero-based row index in the processed annotation bundle; the published frame number is retained as sample identity",
+    "maximum_video_annotation_frame_count_delta": 3,
+    "deterministic_sampling_hz": 5.0,
+    "sampling_start_index": 0,
+    "sampling_rule": "indices 0, step, 2*step, ... per subject/sequence/camera, with step=round(sequence_fps/5)",
+    "minimum_subjects": 8,
+    "minimum_subject_sequences": 16,
+    "decode_probe": "first, middle, and final frame of every video",
+    "rgb_recompression_performed": false
+  },
+  "metrics": {
+    "primary_2d_subset": "direct_common12",
+    "secondary_2d_subset": "full15_with_derived_joints_and_head_proxy",
+    "normalizer": "ground-truth pelvis-to-neck torso length in pixels",
+    "reported": [
+      "detection_success_rate",
+      "mean_and_median_normalized_keypoint_error",
+      "PCK2D_at_0.05_and_0.10_torso",
+      "per_joint_error",
+      "per_subject_error",
+      "per_camera_error",
+      "confidence_error_correlation",
+      "confidence_bin_error_quantiles",
+      "confidence_calibration_ECE"
+    ]
+  },
+  "scientific_gate": {
+    "requires_two_independent_detectors": true,
+    "minimum_success_rate_each_detector": 0.8,
+    "minimum_finite_common12_fraction": 0.8,
+    "pass_decision": "READY_FOR_PHASE9C_CONFIDENCE_AWARE_V2_TRAINING",
+    "fail_decision": "REPAIR_RGB_ALIGNMENT_OR_DETECTOR_PIPELINE_BEFORE_V2"
+  },
+  "interpretation_limits": [
+    "This phase characterizes real detector errors and creates a locked cache; it does not claim improved 3D pose.",
+    "Camera coverage must be reported exactly. A one-camera RGB subset must not be described as full 14-camera RGB coverage.",
+    "The available 16-video package supports camera 0 across all 16 subject/sequence groups. It is a subject-complete single-camera development audit, not a full multiview RGB benchmark.",
+    "Decoded video frames are used directly without extraction or RGB recompression.",
+    "The head result is secondary because COCO nose and MPI-INF-3DHP head joints are not anatomically identical.",
+    "No Official TS1-TS6 result may influence detector, threshold, architecture, or training choices.",
+    "The output cache is intended for a separately locked confidence-aware V2 training phase."
+  ]
+}

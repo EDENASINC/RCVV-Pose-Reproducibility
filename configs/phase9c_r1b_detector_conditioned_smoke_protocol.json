@@ -1,0 +1,58 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1b_detector_conditioned_smoke_protocol_lock_v1",
+  "phase": "9C-R1B",
+  "title": "Detector-Conditioned Virtual-View Training Smoke",
+  "scientific_role": "pipeline_smoke_without_model_or_claim_selection",
+  "source_phase": "9C-R1A",
+  "source_gate": "READY_FOR_PHASE9C_R1B_DETECTOR_CONDITIONED_SMOKE",
+  "source_b1_script_sha256": "fc1ae8f11ec6fb1b75c8d8c730e61a67f1b1aa45422227364e4bce71eb72b673",
+  "source_r1a_protocol_sha256": "dc5cd89da6addb3458ee0da6ea90ed995d041747ea06815822b798a5c863187e",
+  "development_scope": {
+    "split": "split_a",
+    "seed": 42,
+    "training_partition": "train",
+    "evaluation_partition": "val",
+    "development_test_metrics_computed": false
+  },
+  "arms": [
+    "clean_observed_legacy",
+    "detector_aware_observed",
+    "detector_conditioned_virtual_view_no_confidence",
+    "detector_conditioned_calibrated_confidence_virtual_view"
+  ],
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "virtual_view_policy": {
+    "source_cache_format": "phase9c_r1a_detector_conditioned_virtual_cache_v1",
+    "source_input": "phase9b_prediction_c15_px_real_detector",
+    "candidate_id": "rotation_yaw_m15",
+    "select_virtual_view_matching_eval_detector": true,
+    "legacy_clean_conditioned_virtual_view_used_as_input": false,
+    "require_exact_dataset_and_detector_index_alignment": true
+  },
+  "detector_missingness_policy": {
+    "primary_metric_cohort": "paired_common_detection",
+    "same_sample_cohort_across_arms_and_detectors": true,
+    "ground_truth_imputation_for_detector_failures": false
+  },
+  "training_budget": {
+    "strict_device": "cuda:0",
+    "num_workers": 8,
+    "batch_size": 512,
+    "eval_batch_size": 512,
+    "max_epochs": 2,
+    "max_train_batches": 8,
+    "max_eval_batches": 4,
+    "max_train_samples": 16384,
+    "max_eval_samples": 4096
+  },
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "next_gate": {
+    "pass": "READY_FOR_PHASE9C_R1C_CONFIDENCE_MECHANISM_SCREEN",
+    "fail": "REPAIR_PHASE9C_R1B_BEFORE_CONFIDENCE_SCREEN"
+  }
+}

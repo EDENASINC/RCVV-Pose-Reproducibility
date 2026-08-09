@@ -1,0 +1,71 @@
+{
+  "format": "phase9b_rgb_detector_qc_v1",
+  "phase": "9B",
+  "status": "PASS",
+  "scientific_decision": "READY_FOR_PHASE9C_CONFIDENCE_AWARE_V2_TRAINING",
+  "checks": [
+    {
+      "name": "protocol_lock",
+      "passed": true,
+      "detail": "phase9b_rgb_detector_protocol_lock_v1"
+    },
+    {
+      "name": "preflight_pass",
+      "passed": true,
+      "detail": "PASS"
+    },
+    {
+      "name": "official_test_isolation",
+      "passed": true,
+      "detail": "Official TS1-TS6 unread; no 3D training"
+    },
+    {
+      "name": "two_detector_cache",
+      "passed": true,
+      "detail": "detectors=('rtmpose_performance', 'yolo11l_pose'), samples=160728, shapes_ok=True"
+    },
+    {
+      "name": "finite_ground_truth",
+      "passed": true,
+      "detail": "True"
+    },
+    {
+      "name": "finite_reports",
+      "passed": true,
+      "detail": "metrics/error model finite or explicit null"
+    },
+    {
+      "name": "detector_gate:rtmpose_performance",
+      "passed": true,
+      "detail": "success=1.0000, finite_common12=1.0000"
+    },
+    {
+      "name": "detector_gate:yolo11l_pose",
+      "passed": true,
+      "detail": "success=0.9916, finite_common12=0.9916"
+    },
+    {
+      "name": "detector_runtime_and_weight_hashes_recorded",
+      "passed": true,
+      "detail": "{'rtmpose_performance': 2, 'yolo11l_pose': 1}"
+    }
+  ],
+  "blockers": [],
+  "detector_gate": {
+    "rtmpose_performance": {
+      "detection_success_rate": 1.0,
+      "finite_common12_fraction": 0.9999937783086954,
+      "passed": true
+    },
+    "yolo11l_pose": {
+      "detection_success_rate": 0.9915696082823154,
+      "finite_common12_fraction": 0.991563386591011,
+      "passed": true
+    }
+  },
+  "coverage_interpretation": "multi_camera_rgb_subset",
+  "sample_count": 160728,
+  "official_TS1_to_TS6_read": false,
+  "model_training_performed": false,
+  "next_phase_if_pass": "Phase 9C confidence-aware V2 training with real-detector cache, noise augmentation matched to Phase 9B error quantiles, observed-only and virtual-view ablations, 3 splits x 3 seeds."
+}

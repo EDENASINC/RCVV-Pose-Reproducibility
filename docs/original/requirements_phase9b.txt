@@ -1,0 +1,4 @@
+ultralytics==8.4.112
+# Installed by repair_phase9b_gpu_runtime.py so that the ONNX Runtime CUDA
+# major matches the CUDA runtime bundled with the existing PyTorch install.
+tqdm>=4.66,<5

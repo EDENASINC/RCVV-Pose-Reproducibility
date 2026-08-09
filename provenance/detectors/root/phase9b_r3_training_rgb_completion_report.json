@@ -1,0 +1,125 @@
+{
+  "format": "phase9b_r3_training_rgb_completion_v1",
+  "phase": "9B-R3",
+  "created_utc": "2026-07-31T05:17:01.991783+00:00",
+  "status": "PASS",
+  "decision": "CONTINUE_PHASE9B_R2_REAL_DETECTOR_BENCHMARK",
+  "project_root": "D:\\Research\\vv_pose_project",
+  "training_root": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp",
+  "protocol": {
+    "official_TS1_to_TS6_sample_content_read": false,
+    "model_training_performed": false,
+    "detector_inference_performed": false,
+    "ground_truth_assisted_person_selection": false
+  },
+  "gate": {
+    "expected_subjects": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8"
+    ],
+    "expected_sequences_per_subject": [
+      "Seq1",
+      "Seq2"
+    ],
+    "expected_subject_sequence_groups": 16,
+    "minimum_cameras_per_group": 8,
+    "reference_camera_ids": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "counts": {
+    "present_subjects": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8"
+    ],
+    "subject_count": 8,
+    "missing_subjects": [],
+    "present_subject_sequence_groups": 16,
+    "complete_subject_sequence_groups": 16,
+    "missing_or_incomplete_groups": [],
+    "video_count": 128,
+    "total_video_bytes": 6814883460,
+    "camera_union": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "camera_intersection": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "official_acquisition_support": {
+    "dataset_page": "https://vcai.mpi-inf.mpg.de/3dhp-dataset/",
+    "readme": "data/raw/mpi_inf_3dhp/README.txt",
+    "get_dataset_sh": "data/raw/mpi_inf_3dhp/get_dataset.sh",
+    "conf_ig": {
+      "path": "data/raw/mpi_inf_3dhp/conf.ig",
+      "subjects": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "cameras": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ready_to_download": 1
+    },
+    "top_level_archives": [
+      {
+        "path": "data/raw/mpi_inf_3dhp/mpi_inf_3dhp.zip",
+        "size_bytes": 11495
+      }
+    ]
+  },
+  "recommended_actions": [
+    "Run run_phase9b_r2_video_repair_and_continue.bat.",
+    "Keep MPI-INF-3DHP TS1-TS6 isolated for the locked official test."
+  ],
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]"
+  }
+}

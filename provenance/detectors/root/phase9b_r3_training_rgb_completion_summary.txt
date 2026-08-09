@@ -1,0 +1,16 @@
+========================================================================================
+PHASE 9B-R3 — MPI-INF-3DHP TRAINING RGB COMPLETENESS GATE
+========================================================================================
+Status                         : PASS
+Decision                       : CONTINUE_PHASE9B_R2_REAL_DETECTOR_BENCHMARK
+Subjects present               : 8/8 (S1, S2, S3, S4, S5, S6, S7, S8)
+Complete subject/sequence groups: 16/16
+Videos                         : 128
+Camera intersection            : [0, 1, 2, 4, 5, 6, 7, 8]
+Official TS1-TS6 read         : NO
+Training / detector inference : NO / NO
+----------------------------------------------------------------------------------------
+Required next actions:
+  - Run run_phase9b_r2_video_repair_and_continue.bat.
+  - Keep MPI-INF-3DHP TS1-TS6 isolated for the locked official test.
+========================================================================================

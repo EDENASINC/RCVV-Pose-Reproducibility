@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1e_run_report_v1",
+  "phase": "9C-R1E",
+  "scientific_role": "locked_factorial_synergy_attribution_after_r1d_reassessment",
+  "split": "split_a",
+  "seed": 123,
+  "arm": "bounded_reliability_observed_modulation",
+  "train_detector": "rtmpose_performance",
+  "best_epoch": 50,
+  "epochs_completed": 50,
+  "best_validation_selection_score": 98.38624178884257,
+  "checkpoint_selection": "matched_validation_geometric_mean_mpjpe_pa_mpjpe",
+  "feature_dim": 70,
+  "trainable_parameters": 95274,
+  "evaluations": {
+    "rtmpose_performance": {
+      "val": {
+        "mpjpe_mm": 121.24203015952143,
+        "pa_mpjpe_mm": 79.83908353065803,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_val.npz",
+        "per_sample_sha256": "5e2f863741df699ba35dd51bc1db7699998c202a93eae6766dd6bc34ec5bdbde"
+      },
+      "test": {
+        "mpjpe_mm": 128.51899534729992,
+        "pa_mpjpe_mm": 85.9022988597071,
+        "samples": 19666,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_test.npz",
+        "per_sample_sha256": "03144e7dce0c211bc1101c5b6caf85ce108f3aead2701e325530aa1044e94b30"
+      }
+    },
+    "yolo11l_pose": {
+      "val": {
+        "mpjpe_mm": 170.5391840104686,
+        "pa_mpjpe_mm": 111.60296376495513,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_val.npz",
+        "per_sample_sha256": "a9f31a1b8530fb68cae996ea307b11cdd9ad158952e25787d469699deeee6bff"
+      },
+      "test": {
+        "mpjpe_mm": 173.48161007576527,
+        "pa_mpjpe_mm": 116.13616536789382,
+        "samples": 19666,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_test.npz",
+        "per_sample_sha256": "e6d7a4eac0d2f8ba1aa51e76dbaa363178f36a2834b87a8a7071bec02ac9f61d"
+      }
+    }
+  },
+  "test_metrics_computed": true,
+  "test_used_for_selection": false,
+  "protocol_sha256": "353ddf445920afd33233eba48d8c3b2950664fa0dd4ca2c643bafef465da5ec1",
+  "artifact_hashes": [
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_val.npz",
+      "sha256": "5e2f863741df699ba35dd51bc1db7699998c202a93eae6766dd6bc34ec5bdbde"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_rtmpose_performance_test.npz",
+      "sha256": "03144e7dce0c211bc1101c5b6caf85ce108f3aead2701e325530aa1044e94b30"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_val.npz",
+      "sha256": "a9f31a1b8530fb68cae996ea307b11cdd9ad158952e25787d469699deeee6bff"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\per_sample_yolo11l_pose_test.npz",
+      "sha256": "e6d7a4eac0d2f8ba1aa51e76dbaa363178f36a2834b87a8a7071bec02ac9f61d"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\best.pt",
+      "sha256": "f220579d3dc10042629d81bfcab74df0da1df12d3cd065e0c1dc22ffb09e9e33"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\last.pt",
+      "sha256": "0947cf67f12a33711a2ee093524ebfd94a03d87bec90b62a7975b7ce62e37113"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1e_synergy_attribution\\split_a\\seed123\\bounded_reliability_observed_modulation\\train_rtmpose_performance\\training_history.csv",
+      "sha256": "74a213dcbd87387fc87720f042065eeec624c6069f61c409e4c9f13eab07629a"
+    }
+  ],
+  "elapsed_sec": 481.21874809265137,
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false
+}

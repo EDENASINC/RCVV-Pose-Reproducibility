@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1d_run_report_v1",
+  "phase": "9C-R1D",
+  "scientific_role": "locked_multisplit_multiseed_confirmation_and_post_selection_development_test",
+  "split": "split_c",
+  "seed": 42,
+  "arm": "detector_aware_observed",
+  "train_detector": "yolo11l_pose",
+  "best_epoch": 44,
+  "epochs_completed": 50,
+  "best_validation_selection_score": 101.72513447195125,
+  "checkpoint_selection": "matched_validation_geometric_mean_mpjpe_pa_mpjpe",
+  "feature_dim": 28,
+  "trainable_parameters": 84522,
+  "evaluations": {
+    "rtmpose_performance": {
+      "val": {
+        "mpjpe_mm": 123.36004198851509,
+        "pa_mpjpe_mm": 82.67896334104076,
+        "samples": 19678,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_rtmpose_performance_val.npz",
+        "per_sample_sha256": "df25ba2c1c978983811bd06f7413ea4b0b1c53f394957db814a5019a3f212f5e"
+      },
+      "test": {
+        "mpjpe_mm": 138.7197345463609,
+        "pa_mpjpe_mm": 88.40169491525424,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_rtmpose_performance_test.npz",
+        "per_sample_sha256": "41e99129ab0b9c39133a0466d1625065b803b11e5ad1bc29ea351937259dfbe5"
+      }
+    },
+    "yolo11l_pose": {
+      "val": {
+        "mpjpe_mm": 123.41765312150625,
+        "pa_mpjpe_mm": 83.84540397271064,
+        "samples": 19678,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_yolo11l_pose_val.npz",
+        "per_sample_sha256": "3bd7d26b19bb370c69a05428f37c0b6cea7a59d735f753874b238d2b47842b9c"
+      },
+      "test": {
+        "mpjpe_mm": 136.9762688497009,
+        "pa_mpjpe_mm": 90.13963266450648,
+        "samples": 20060,
+        "per_sample_path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_yolo11l_pose_test.npz",
+        "per_sample_sha256": "3332253f0061dabee88acbb9138e6cf7aebc7b432dfc823f30004bf6577b8492"
+      }
+    }
+  },
+  "test_metrics_computed": true,
+  "test_used_for_selection": false,
+  "protocol_sha256": "152dcaa36ac1b0cf565a3b5301e91448614af17c26fe5f90bf973fd21c5e56b6",
+  "artifact_hashes": [
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_rtmpose_performance_val.npz",
+      "sha256": "df25ba2c1c978983811bd06f7413ea4b0b1c53f394957db814a5019a3f212f5e"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_rtmpose_performance_test.npz",
+      "sha256": "41e99129ab0b9c39133a0466d1625065b803b11e5ad1bc29ea351937259dfbe5"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_yolo11l_pose_val.npz",
+      "sha256": "3bd7d26b19bb370c69a05428f37c0b6cea7a59d735f753874b238d2b47842b9c"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\per_sample_yolo11l_pose_test.npz",
+      "sha256": "3332253f0061dabee88acbb9138e6cf7aebc7b432dfc823f30004bf6577b8492"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\best.pt",
+      "sha256": "07bec731b25529c035848742757dbf1eb0abcbd9117e802a436e7d7ca3ceb37c"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\last.pt",
+      "sha256": "22fbdc03f0f3b1fa4b6cf078333db2711af131030f2bebcc5a6b2e6e3a410dfa"
+    },
+    {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1d_locked_full_confirmation\\split_c\\seed42\\detector_aware_observed\\train_yolo11l_pose\\training_history.csv",
+      "sha256": "21beca96248ab871c9f9a9250a0de437deac322d8c9fb7b4b5915562998d15ce"
+    }
+  ],
+  "elapsed_sec": 366.03104519844055,
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false
+}

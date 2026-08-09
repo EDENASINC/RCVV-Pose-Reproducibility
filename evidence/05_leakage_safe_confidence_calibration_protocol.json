@@ -1,0 +1,66 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_a_protocol_lock_v1",
+  "phase": "9C-A",
+  "title": "Leakage-Safe Detector Confidence Calibration and Nonparametric Residual Bank",
+  "source_phase": "9B-R3",
+  "source_lock": {
+    "phase9b_qc_sha256": "42cbf84800f9a4b80a8ad7beb74e39d30cb15e410b3534fae371ff97cec924bf",
+    "phase9b_detector_cache_sha256": "beebb5c3a0bdcb3ac23cba39487f89d747602d6470ba7aa55dd4c8447956ec83",
+    "required_qc_status": "PASS",
+    "required_scientific_decision": "READY_FOR_PHASE9C_CONFIDENCE_AWARE_V2_TRAINING",
+    "required_sample_count": 160728,
+    "required_detectors": [
+      "rtmpose_performance",
+      "yolo11l_pose"
+    ]
+  },
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_calibration": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "development_splits": {
+    "split_a": {
+      "train_subjects": ["S1", "S2", "S3", "S4", "S5", "S6"],
+      "validation_subjects": ["S7"],
+      "test_subjects": ["S8"]
+    },
+    "split_b": {
+      "train_subjects": ["S1", "S2", "S3", "S4", "S5", "S7"],
+      "validation_subjects": ["S8"],
+      "test_subjects": ["S6"]
+    },
+    "split_c": {
+      "train_subjects": ["S1", "S2", "S3", "S4", "S5", "S8"],
+      "validation_subjects": ["S6"],
+      "test_subjects": ["S7"]
+    }
+  },
+  "calibration": {
+    "target": "joint_is_correct_when_NME_at_0.10_torso",
+    "fit_subset": "direct_common12",
+    "fit_partition": "training_subjects_only_per_split",
+    "validation_role": "calibration_QC_only",
+    "test_role": "unread_for_calibration_and_method_selection",
+    "method": "fixed_100_equal_frequency_bins_then_weighted_PAVA",
+    "method_selection_on_validation": false,
+    "ece_bins": 15
+  },
+  "residual_bank": {
+    "units": "prediction_minus_ground_truth_divided_by_GT_pelvis_to_neck_torso_length",
+    "partition": "training_subjects_only_per_split",
+    "confidence_bins": 10,
+    "reservoir_per_split_detector_joint_bin": 512,
+    "sampling": "deterministic_without_replacement_seeded_by_split_detector_joint_bin",
+    "purpose": "Phase9C-B detector-matched nonparametric augmentation"
+  },
+  "next_phase_gate": {
+    "require_all_six_validation_pairs_finite": true,
+    "require_calibrated_ECE_better_than_raw_in_all_six_pairs": true,
+    "require_calibrated_Brier_better_than_raw_in_all_six_pairs": true,
+    "pass_decision": "READY_FOR_PHASE9C_B_FOUR_ARM_MULTISPLIT_TRAINING",
+    "fail_decision": "REPAIR_PHASE9C_A_CALIBRATION_OR_CACHE_ALIGNMENT"
+  }
+}

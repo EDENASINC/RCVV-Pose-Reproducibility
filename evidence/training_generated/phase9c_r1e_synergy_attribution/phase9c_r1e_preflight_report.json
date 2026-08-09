@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1e_preflight_report_v1",
+  "phase": "9C-R1E",
+  "scientific_decision": "READY_FOR_PHASE9C_R1E_FULL_RUNS",
+  "protocol_sha256": "353ddf445920afd33233eba48d8c3b2950664fa0dd4ca2c643bafef465da5ec1",
+  "train_script_sha256": "13860fd86fa99e832d857332059d14d8d647275365ac4eccf64efa9c6271f5d6",
+  "source_r1d_qc_format": "phase9c_r1d_qc_report_v2_evidence_contract_repair",
+  "source_r1d_scientific_decision": "STOP_AND_REASSESS_BEFORE_OFFICIAL_TEST",
+  "source_r1d_primary_mpjpe_gain_percent": 2.2692290474440293,
+  "source_r1d_artifacts_verified": 378,
+  "planned_new_runs": 18,
+  "workers": 8,
+  "device": "cuda:0",
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false,
+  "errors": []
+}

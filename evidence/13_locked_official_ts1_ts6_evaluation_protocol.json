@@ -1,0 +1,92 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1f_locked_official_test_protocol_v1",
+  "phase": "9C-R1F",
+  "title": "Locked Detector-Input Official TS1-TS6 Confirmation",
+  "created_date": "2026-08-03",
+  "source_gate": {
+    "phase9c_r1e_protocol_sha256": "353ddf445920afd33233eba48d8c3b2950664fa0dd4ca2c643bafef465da5ec1",
+    "required_qc_status": "PASS",
+    "required_scientific_decision": "READY_FOR_PHASE9C_R1F_OFFICIAL_TEST_Q2_CAUTIOUS_SYNERGY",
+    "source_r1d_primary_mpjpe_gain_percent": 2.2692290474440293,
+    "phase9c_r1e_official_TS1_to_TS6_read": false,
+    "project_level_legacy_phase7_official_evaluation_exists": true,
+    "r1f_detector_input_method_previously_evaluated_on_official_TS1_to_TS6": false,
+    "transparency_note": "TS1-TS6 was previously evaluated by the legacy GT-2D Phase 7 system. R1F is the first locked Official evaluation of the new RGB-detector-input Phase 9C method; this is not described as a pristine project-level first look."
+  },
+  "evaluation_scope": {
+    "dataset": "MPI-INF-3DHP",
+    "partition": ["TS1", "TS2", "TS3", "TS4", "TS5", "TS6"],
+    "input_2d": "RGB detector predictions only",
+    "detectors": ["rtmpose_performance", "yolo11l_pose"],
+    "person_selection": "detector-native highest confidence; no ground-truth assistance",
+    "missing_detection_policy": "zero observed-root pose, zero virtual pose, zero confidence, and forced zero reliability; retain frame in primary metrics",
+    "primary_frame_cohort": "all official valid_frame==1 frames; no model-error exclusion",
+    "ground_truth_3d": "univ_annot3 used only after detector cache is locked",
+    "root_alignment": "subtract canonical pelvis",
+    "evaluation_joint_layout": "canonical non-root 14 joints",
+    "official17_to_canonical15_zero_based": [14, 8, 9, 10, 11, 12, 13, 1, 16, 5, 6, 7, 2, 3, 4],
+    "primary_metrics": ["MPJPE_mm", "PA_MPJPE_mm"],
+    "secondary_metrics": ["3DPCK_at_150mm_pct", "AUC_0_to_150mm_pct"],
+    "pck_rule": "strict joint error less than threshold",
+    "auc_thresholds_mm": {"start": 0, "stop": 150, "step": 5, "points": 31},
+    "primary_aggregation": "equal subject x split x seed x detector macro"
+  },
+  "locked_model_matrix": {
+    "splits": ["split_a", "split_b", "split_c"],
+    "seeds": [42, 123, 2026],
+    "detectors": ["rtmpose_performance", "yolo11l_pose"],
+    "arms": [
+      "detector_aware_observed",
+      "detector_conditioned_virtual_view_no_confidence",
+      "bounded_reliability_observed_modulation",
+      "bounded_reliability_dual_modulation"
+    ],
+    "checkpoint_count": 72,
+    "checkpoint_selection_partition": "matched validation only",
+    "official_test_used_for_checkpoint_or_arm_selection": false,
+    "retraining_on_official_test": false
+  },
+  "comparisons": {
+    "primary": "bounded_reliability_dual_modulation minus detector_aware_observed",
+    "conditional_virtual": "bounded_reliability_dual_modulation minus bounded_reliability_observed_modulation",
+    "reliability_only": "bounded_reliability_observed_modulation minus detector_aware_observed",
+    "ungated_virtual": "detector_conditioned_virtual_view_no_confidence minus detector_aware_observed",
+    "interaction": "conditional_virtual effect minus ungated_virtual effect"
+  },
+  "bootstrap": {
+    "replicates": 20000,
+    "seed": 20260803,
+    "confidence_level": 0.95,
+    "hierarchy": ["subject", "split", "seed_within_split", "detector"],
+    "paired": true
+  },
+  "decision_rules": {
+    "minimum_detector_coverage_for_publication_claim": 0.90,
+    "practical_mpjpe_gain_percent": 2.0,
+    "OFFICIAL_CONFIRMED_Q1_Q2_CORE_EVIDENCE": "Both primary paired 95% confidence intervals exclude zero, both detector means improve both primary metrics, each detector covers at least 90% of valid frames, and MPJPE gain is at least 2%.",
+    "OFFICIAL_CONFIRMED_Q2_MODEST": "Both primary paired 95% confidence intervals exclude zero, both detector means improve both primary metrics, and each detector covers at least 90% of valid frames, but MPJPE gain is below 2%.",
+    "OFFICIAL_TREND_ONLY_WRITE_Q2_CAUTIOUS": "Primary point gains are positive but a confirmatory condition is not met.",
+    "NOT_EXTERNALLY_CONFIRMED_LOCK_NEGATIVE_RESULT": "At least one primary point gain is non-positive. Official Test must not be rerun for model selection."
+  },
+  "compute": {
+    "device": "cuda:0",
+    "detector_batch_mode": "one image at a time for detector parity with Phase 9B",
+    "lifter_batch_size": 1024,
+    "detector_resume_jsonl": true
+  },
+  "subjects": [
+    {"subject":"TS1","annotation_relpath":"data/raw/mpi_inf_3dhp/mpi_inf_3dhp_test_set/mpi_inf_3dhp_test_set/TS1/annot_data.mat","annotation_sha256":"6b7f149025049d7b8b5dfd1d74d00d69ba8927235dffa2894318452143eb13e7","total_frames":6151,"valid_frames":603,"image_size":[2048,2048],"focal_length_px":1499.2054687744},
+    {"subject":"TS2","annotation_relpath":"data/raw/mpi_inf_3dhp/mpi_inf_3dhp_test_set/mpi_inf_3dhp_test_set/TS2/annot_data.mat","annotation_sha256":"a09173a5926f7030821fa31740a98ed1b7b7284c2acdb9593d3f66c184f521d9","total_frames":6080,"valid_frames":540,"image_size":[2048,2048],"focal_length_px":1499.2054687744},
+    {"subject":"TS3","annotation_relpath":"data/raw/mpi_inf_3dhp/mpi_inf_3dhp_test_set/mpi_inf_3dhp_test_set/TS3/annot_data.mat","annotation_sha256":"9619d94ffcd8423f5b956e3f6b5087d711567e62f7b33a0192aa9ef7be397d23","total_frames":5838,"valid_frames":506,"image_size":[2048,2048],"focal_length_px":1499.2054687744},
+    {"subject":"TS4","annotation_relpath":"data/raw/mpi_inf_3dhp/mpi_inf_3dhp_test_set/mpi_inf_3dhp_test_set/TS4/annot_data.mat","annotation_sha256":"857951834200715c7fb9a5296252fdfb0811b6f31d504efe16a936b46fb0e16c","total_frames":6007,"valid_frames":558,"image_size":[2048,2048],"focal_length_px":1499.2054687744},
+    {"subject":"TS5","annotation_relpath":"data/raw/mpi_inf_3dhp/mpi_inf_3dhp_test_set/mpi_inf_3dhp_test_set/TS5/annot_data.mat","annotation_sha256":"4eb70941f9cfd9e5dad8a188364c38858e3f61ba562fa4afdcad637928d1c78e","total_frames":320,"valid_frames":276,"image_size":[1920,1080],"focal_length_px":1683.98345952},
+    {"subject":"TS6","annotation_relpath":"data/raw/mpi_inf_3dhp/mpi_inf_3dhp_test_set/mpi_inf_3dhp_test_set/TS6/annot_data.mat","annotation_sha256":"bc494bf14c5f6aa524a1b38e49c699ae6d46c1c4aa17b77e4ace369abf1fbb87","total_frames":492,"valid_frames":392,"image_size":[1920,1080],"focal_length_px":1683.98345952}
+  ],
+  "locked_evaluation_policy": {
+    "detector_cache_may_resume_until_complete": true,
+    "r1f_scientific_metrics_are_unsealed_only_after_detector_cache_lock": true,
+    "completed_official_summary_is_reused_not_recomputed": true,
+    "no_tuning_retraining_or_favorable_rerun_after_unsealing": true
+  }
+}

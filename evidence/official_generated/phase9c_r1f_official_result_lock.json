@@ -1,0 +1,13 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1f_official_result_lock_v1",
+  "protocol_sha256": "7f07ce67ff926d7e071ec67d84481a43d24d5396f91bfb557b8d9bab30c7d2c1",
+  "detector_cache_sha256": "8c34d0462cfd4458e57f9e194f9666d4711c7d131bec34498934e0e197c8f711",
+  "summary_sha256": "157016f1741bf4fb890e2f45b6bb4e7a67b4f8be31acfa7a2f4e5ec35b95aa45",
+  "per_frame_errors_sha256": "1a60346bb7e4948f1fdab84b7bf87061d8cd8dc47cfd55cf7696461a165a43d6",
+  "ensemble_predictions_sha256": "e41ed202294056b116399009590cdb81acb7f4af02f88ceef4db3f4afa94d2bb",
+  "checkpoint_matrix_sha256": "e57e1d5b34aa7c5da13154cafebfe8db1556652e08347c56d86c42b25ca089ba",
+  "checkpoint_count": 72,
+  "scientific_decision": "OFFICIAL_TREND_ONLY_WRITE_Q2_CAUTIOUS",
+  "rerun_for_selection_forbidden": true
+}

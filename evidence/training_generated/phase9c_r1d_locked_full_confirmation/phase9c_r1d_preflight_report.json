@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1d_preflight_report_v1",
+  "phase": "9C-R1D",
+  "scientific_role": "locked_multisplit_multiseed_confirmation_and_post_selection_development_test",
+  "scientific_decision": "READY_FOR_PHASE9C_R1D_FULL_RUNS",
+  "protocol_sha256": "152dcaa36ac1b0cf565a3b5301e91448614af17c26fe5f90bf973fd21c5e56b6",
+  "source_b1_script_sha256": "fc1ae8f11ec6fb1b75c8d8c730e61a67f1b1aa45422227364e4bce71eb72b673",
+  "source_r1c_script_sha256": "0bcfee2535017abc6d4648b62b1b8e358a0251fe25a6a7e07304499eb73b7dfc",
+  "source_r1c_gate": "READY_FOR_PHASE9C_R1D_LOCKED_FULL_CONFIRMATION",
+  "locked_selected_arm": "bounded_reliability_dual_modulation",
+  "source_r1c_qc_sha256": "be96801b5e5ddfbef679d7ace03956f1f1241b0426f06a8da4d15b5cd133413d",
+  "source_r1c_statistics_sha256": "fba59d4701f77476a647e30feacb7e071866c1101337f0fed8a6e7635ab385b0",
+  "source_hashes": {
+    "phase9c_a_residual_bank.npz": "981e45fcb62c8425ba50a459aeccebbfbda60edc3659d5c32496a879b0737258",
+    "phase9c_a_calibration_models.json": "f2df1141185e0d2addb5e60343b19de9c921fc63571e2af3822433b2d9520c79",
+    "phase9c_b0_detector_join_cache.npz": "7aa5f26364928a46a60f5229c011d2103c0ebba2a441228b9a6a16467da72350"
+  },
+  "r1a_caches": {
+    "split_a": {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1a_detector_conditioned_virtual_cache\\split_a\\phase9c_r1a_detector_virtual_cache.npz",
+      "sha256": "b30181ed5c65d1d33bd82d29d94afcd6f34dd960a3e529178887a4d38c32a791",
+      "samples": 159373
+    },
+    "split_b": {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1a_detector_conditioned_virtual_cache\\split_b\\phase9c_r1a_detector_virtual_cache.npz",
+      "sha256": "b720cd87198abd0ad446fa0880b0f761ea85290332707b408a326cab72533bc2",
+      "samples": 159373
+    },
+    "split_c": {
+      "path": "D:\\Research\\vv_pose_project\\outputs\\phase9c_r1a_detector_conditioned_virtual_cache\\split_c\\phase9c_r1a_detector_virtual_cache.npz",
+      "sha256": "97983a585bef28afb04fd58b71c27657f2eb5dc2b367babfd758868c2838e02d",
+      "samples": 159373
+    }
+  },
+  "risk_bounding_audit": {
+    "raw_positive_quantiles": {
+      "min": 0.09590047597885132,
+      "p10": 0.13408716320991515,
+      "p25": 0.2645362690091133,
+      "median": 0.6738967001438141,
+      "p75": 2.194806754589081,
+      "p90": 4.209617805480957,
+      "max": 8.325339317321777
+    },
+    "bounded_quality_min": 0.07068970054388046,
+    "bounded_quality_max": 0.9478404521942139,
+    "joint_scale_min": 0.32265400886535645,
+    "joint_scale_max": 2.0153989791870117,
+    "raw_risk_used_directly_as_model_input": false
+  },
+  "windows_spawn_probe": {
+    "status": "PASS",
+    "workers": 8,
+    "initializer": "preflight_real_script_module",
+    "batch_shape": [
+      8,
+      2
+    ]
+  },
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "workers": 8,
+  "planned_runs": 54,
+  "development_test_role": "post_selection_evidence_only",
+  "development_test_used_for_selection": false,
+  "official_TS1_to_TS6_read": false,
+  "official_TS1_to_TS6_used": false
+}

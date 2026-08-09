@@ -1,0 +1,68 @@
+name: canonical_15j_v1
+num_joints: 15
+
+joint_names:
+  - pelvis
+  - r_hip
+  - r_knee
+  - r_ankle
+  - l_hip
+  - l_knee
+  - l_ankle
+  - neck
+  - head
+  - l_shoulder
+  - l_elbow
+  - l_wrist
+  - r_shoulder
+  - r_elbow
+  - r_wrist
+
+parents:
+  - -1
+  - 0
+  - 1
+  - 2
+  - 0
+  - 4
+  - 5
+  - 0
+  - 7
+  - 7
+  - 9
+  - 10
+  - 7
+  - 12
+  - 13
+
+joints_left:
+  - 4
+  - 5
+  - 6
+  - 9
+  - 10
+  - 11
+
+joints_right:
+  - 1
+  - 2
+  - 3
+  - 12
+  - 13
+  - 14
+
+bones:
+  - [0, 1]
+  - [1, 2]
+  - [2, 3]
+  - [0, 4]
+  - [4, 5]
+  - [5, 6]
+  - [0, 7]
+  - [7, 8]
+  - [7, 9]
+  - [9, 10]
+  - [10, 11]
+  - [7, 12]
+  - [12, 13]
+  - [13, 14]

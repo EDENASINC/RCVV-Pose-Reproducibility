@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1f_detector_cache_report_v1",
+  "phase": "9C-R1F",
+  "protocol_sha256": "7f07ce67ff926d7e071ec67d84481a43d24d5396f91bfb557b8d9bab30c7d2c1",
+  "cache_sha256": "8c34d0462cfd4458e57f9e194f9666d4711c7d131bec34498934e0e197c8f711",
+  "samples": 2875,
+  "coverage": {
+    "rtmpose_performance": {
+      "detected": 2875,
+      "total": 2875,
+      "success_rate": 1.0,
+      "by_subject": {
+        "TS1": 1.0,
+        "TS2": 1.0,
+        "TS3": 1.0,
+        "TS4": 1.0,
+        "TS5": 1.0,
+        "TS6": 1.0
+      }
+    },
+    "yolo11l_pose": {
+      "detected": 2875,
+      "total": 2875,
+      "success_rate": 1.0,
+      "by_subject": {
+        "TS1": 1.0,
+        "TS2": 1.0,
+        "TS3": 1.0,
+        "TS4": 1.0,
+        "TS5": 1.0,
+        "TS6": 1.0
+      }
+    }
+  },
+  "ground_truth_assisted_person_selection": false,
+  "missing_detection_policy": "zero observed-root pose, zero virtual pose, zero confidence, and forced zero reliability; retain frame in primary metrics",
+  "scientific_3d_metrics_opened": false,
+  "official_rgb_pixels_read": true,
+  "official_ground_truth_3d_read": false,
+  "runtime": {
+    "format": "phase9c_r1f_detector_runtime_v1",
+    "detectors": {
+      "rtmpose_performance": {
+        "device": "cuda",
+        "new_samples": 2875,
+        "elapsed_sec": 278.96435284614563,
+        "model_files": [],
+        "source_phase9b_runtime_reports": [
+          "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\full\\phase9b_detector_runtime.json"
+        ],
+        "source_phase9b_model_hashes": [
+          "8e9ea96a176bd48501eaaa77216e49ee30794d2f8ba80c7b9862beca4ea972da",
+          "df0c0fa91e9870b1515dcaff741fd76cc753dcfb12786862f61b243bae81cd52"
+        ],
+        "phase9b_weight_parity_verified": false,
+        "phase9b_weight_parity_note": "Verified when both current and Phase 9B runtime model-file hashes are discoverable; otherwise detector ID/configuration and current hashes are retained for audit."
+      },
+      "yolo11l_pose": {
+        "device": 0,
+        "new_samples": 2875,
+        "elapsed_sec": 118.25906705856323,
+        "model_files": [
+          {
+            "path": "D:\\Research\\vv_pose_project\\yolo11l-pose.pt",
+            "size_bytes": 53164402,
+            "sha256": "61921abe1f2ed930bf28328a16b3162278cdb239a1e8280b6ac827119f13cee0"
+          }
+        ],
+        "source_phase9b_runtime_reports": [
+          "D:\\Research\\vv_pose_project\\outputs\\phase9b_rgb_detector_benchmark\\full\\phase9b_detector_runtime.json"
+        ],
+        "source_phase9b_model_hashes": [
+          "61921abe1f2ed930bf28328a16b3162278cdb239a1e8280b6ac827119f13cee0"
+        ],
+        "phase9b_weight_parity_verified": true,
+        "phase9b_weight_parity_note": "Verified when both current and Phase 9B runtime model-file hashes are discoverable; otherwise detector ID/configuration and current hashes are retained for audit."
+      }
+    },
+    "total_samples": 2875
+  }
+}

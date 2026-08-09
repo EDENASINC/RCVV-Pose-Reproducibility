@@ -1,0 +1,14 @@
+{
+  "policy": "TS5 RTMPose ensemble sample nearest the subject-median O-minus-OVR MPJPE improvement",
+  "selection_used_for_model_or_claim": false,
+  "subject": "TS5",
+  "frame_index_zero_based": 48,
+  "image_relpath_from_locked_cache": "data/raw/mpi_inf_3dhp/mpi_inf_3dhp_test_set/mpi_inf_3dhp_test_set/TS5/imageSequence/img_000049.jpg",
+  "source_rgb_bytes_present_in_evidence_archive": false,
+  "observed_mpjpe_mm": 86.8799057006836,
+  "full_mpjpe_mm": 82.8560791015625,
+  "observed_pa_mpjpe_mm": 46.73387915878256,
+  "full_pa_mpjpe_mm": 44.98836619636385,
+  "mpjpe_improvement_mm": 4.023826599121094,
+  "subject_median_improvement_mm": 4.0623931884765625
+}

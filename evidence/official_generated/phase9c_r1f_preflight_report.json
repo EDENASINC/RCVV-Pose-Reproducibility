@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "format": "phase9c_r1f_preflight_report_v1",
+  "phase": "9C-R1F",
+  "scientific_decision": "READY_TO_LOCK_OFFICIAL_RGB_DETECTOR_CACHE",
+  "protocol_sha256": "7f07ce67ff926d7e071ec67d84481a43d24d5396f91bfb557b8d9bab30c7d2c1",
+  "checkpoints_verified": 72,
+  "official_subjects": [
+    {
+      "directory": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp\\mpi_inf_3dhp_test_set\\mpi_inf_3dhp_test_set\\TS1\\imageSequence",
+      "numbered_images": 6151,
+      "selected_offset_image_number_to_zero_based_annotation": -1,
+      "valid_images_found": 603,
+      "valid_images_required": 603,
+      "coverage": 1.0,
+      "subject": "TS1",
+      "annotation_sha256": "6b7f149025049d7b8b5dfd1d74d00d69ba8927235dffa2894318452143eb13e7"
+    },
+    {
+      "directory": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp\\mpi_inf_3dhp_test_set\\mpi_inf_3dhp_test_set\\TS2\\imageSequence",
+      "numbered_images": 6080,
+      "selected_offset_image_number_to_zero_based_annotation": -1,
+      "valid_images_found": 540,
+      "valid_images_required": 540,
+      "coverage": 1.0,
+      "subject": "TS2",
+      "annotation_sha256": "a09173a5926f7030821fa31740a98ed1b7b7284c2acdb9593d3f66c184f521d9"
+    },
+    {
+      "directory": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp\\mpi_inf_3dhp_test_set\\mpi_inf_3dhp_test_set\\TS3\\imageSequence",
+      "numbered_images": 5839,
+      "selected_offset_image_number_to_zero_based_annotation": 0,
+      "valid_images_found": 506,
+      "valid_images_required": 506,
+      "coverage": 1.0,
+      "subject": "TS3",
+      "annotation_sha256": "9619d94ffcd8423f5b956e3f6b5087d711567e62f7b33a0192aa9ef7be397d23"
+    },
+    {
+      "directory": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp\\mpi_inf_3dhp_test_set\\mpi_inf_3dhp_test_set\\TS4\\imageSequence",
+      "numbered_images": 6009,
+      "selected_offset_image_number_to_zero_based_annotation": 0,
+      "valid_images_found": 558,
+      "valid_images_required": 558,
+      "coverage": 1.0,
+      "subject": "TS4",
+      "annotation_sha256": "857951834200715c7fb9a5296252fdfb0811b6f31d504efe16a936b46fb0e16c"
+    },
+    {
+      "directory": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp\\mpi_inf_3dhp_test_set\\mpi_inf_3dhp_test_set\\TS5\\imageSequence",
+      "numbered_images": 320,
+      "selected_offset_image_number_to_zero_based_annotation": -1,
+      "valid_images_found": 276,
+      "valid_images_required": 276,
+      "coverage": 1.0,
+      "subject": "TS5",
+      "annotation_sha256": "4eb70941f9cfd9e5dad8a188364c38858e3f61ba562fa4afdcad637928d1c78e"
+    },
+    {
+      "directory": "D:\\Research\\vv_pose_project\\data\\raw\\mpi_inf_3dhp\\mpi_inf_3dhp_test_set\\mpi_inf_3dhp_test_set\\TS6\\imageSequence",
+      "numbered_images": 492,
+      "selected_offset_image_number_to_zero_based_annotation": 0,
+      "valid_images_found": 392,
+      "valid_images_required": 392,
+      "coverage": 1.0,
+      "subject": "TS6",
+      "annotation_sha256": "bc494bf14c5f6aa524a1b38e49c699ae6d46c1c4aa17b77e4ace369abf1fbb87"
+    }
+  ],
+  "official_valid_rgb_frames": 2875,
+  "scientific_3d_metrics_opened": false,
+  "official_ground_truth_3d_read": false,
+  "official_file_inventory_read": true,
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+    "numpy": "2.5.1",
+    "torch": "2.13.0+cu130",
+    "h5py": "3.16.0",
+    "opencv": "5.0.0.93",
+    "rtmlib": "0.0.15",
+    "ultralytics": "8.4.112",
+    "onnxruntime_gpu": "1.28.0"
+  },
+  "errors": []
+}

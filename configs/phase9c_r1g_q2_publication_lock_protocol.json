@@ -1,0 +1,62 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_r1g_q2_publication_lock_protocol_v1",
+  "phase": "9C-R1G",
+  "title": "Q2 Publication Evidence Freeze and Claim Lock",
+  "created_date": "2026-08-03",
+  "scientific_role": "reporting_only_after_locked_official_evaluation",
+  "required_inputs": {
+    "phase9c_r1e_results.zip": {
+      "required_qc_status": "PASS",
+      "required_decision": "READY_FOR_PHASE9C_R1F_OFFICIAL_TEST_Q2_CAUTIOUS_SYNERGY",
+      "official_TS1_to_TS6_read": false
+    },
+    "phase9c_r1f_results.zip": {
+      "required_qc_status": "PASS",
+      "required_result_lock_status": "LOCKED",
+      "required_decision": "OFFICIAL_TREND_ONLY_WRITE_Q2_CAUTIOUS",
+      "rerun_for_selection_forbidden": true
+    }
+  },
+  "locked_interpretation": {
+    "development_confirmation": "The full reliability-conditioned method improves MPJPE and PA-MPJPE over the observed-only detector baseline on the matched post-selection development evaluation, with paired hierarchical-bootstrap 95% confidence intervals above zero.",
+    "official_confirmation": "On locked Official TS1-TS6 RGB-detector input, point estimates improve for both primary errors and for both detectors, but the paired 95% confidence intervals include zero; this is external trend evidence, not confirmatory superiority.",
+    "virtual_view_attribution": "The conditional virtual-view increment above reliability-only is positive in point estimates but not statistically resolved. Strong virtual-view synergy is not claimed.",
+    "publication_position": "Q2 cautious study of reliability-conditioned virtual-view fusion under detector and subject shift, emphasizing locked evaluation, robustness boundaries, and transparent negative evidence."
+  },
+  "allowed_actions": [
+    "verify source hashes and evidence contracts",
+    "reformat locked metrics into paper tables",
+    "compute descriptive macro summaries from locked CSV rows",
+    "render figures from locked point estimates and locked confidence intervals",
+    "write claim, limitation, and extension registries",
+    "package reporting artifacts"
+  ],
+  "forbidden_actions": [
+    "train or fine-tune any model",
+    "run model or detector inference on Official TS1-TS6",
+    "change a checkpoint, arm, detector, metric, cohort, or aggregation rule",
+    "re-bootstrap Official TS1-TS6 with a different seed or hierarchy",
+    "select favorable subjects, activities, frames, detectors, or seeds",
+    "describe Official TS1-TS6 superiority as statistically confirmed",
+    "claim statistically confirmed virtual-view synergy",
+    "claim state of the art without a separately audited protocol-matched literature table"
+  ],
+  "primary_reporting_order": [
+    "locked multi-split multi-seed development confirmation",
+    "factorial attribution of reliability and conditional virtual view",
+    "locked Official TS1-TS6 external trend",
+    "detector, subject, and activity descriptive breakdown",
+    "limitations and negative findings"
+  ],
+  "q1_extension_isolation": {
+    "must_not_reuse_official_TS1_to_TS6_for_model_selection": true,
+    "preferred_next_evidence": "independent-dataset confirmation with a pre-registered protocol and frozen Phase9C design",
+    "candidate_datasets": [
+      "HumanEva-I for a smaller feasibility confirmation",
+      "Human3.6M for a larger standard-protocol extension"
+    ],
+    "not_part_of_q2_freeze": true
+  },
+  "decision": "BUILD_Q2_MANUSCRIPT_EVIDENCE_PACK_WITHOUT_NEW_SCIENTIFIC_EVALUATION"
+}

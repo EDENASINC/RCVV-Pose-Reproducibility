@@ -1,0 +1,66 @@
+{
+  "status": "LOCKED",
+  "format": "phase9c_b1_smoke_protocol_lock_v3",
+  "phase": "9C-B1",
+  "title": "Four-Arm Smoke Training for Calibrated Confidence-Aware Virtual-View Pipeline",
+  "scientific_role": "training_smoke_not_final_scientific_comparison",
+  "source_phase": "9C-B0",
+  "source_gate": "READY_FOR_PHASE9C_B1_FOUR_ARM_SMOKE",
+  "official_test_policy": {
+    "official_TS1_to_TS6_read": false,
+    "official_TS1_to_TS6_inference": false,
+    "official_TS1_to_TS6_used_for_selection": false
+  },
+  "development_scope": {
+    "split": "split_a",
+    "seed": 42,
+    "partitions": ["train", "val", "test"]
+  },
+  "arms": [
+    "clean_observed_legacy",
+    "detector_aware_observed",
+    "virtual_view_no_confidence",
+    "calibrated_confidence_virtual_view"
+  ],
+  "detectors": ["rtmpose_performance", "yolo11l_pose"],
+  "training_budget": {
+    "num_workers": 8,
+    "batch_size": 512,
+    "eval_batch_size": 512,
+    "max_epochs": 2,
+    "max_train_batches": 8,
+    "max_eval_batches": 4,
+    "max_train_samples": 16384,
+    "max_eval_samples": 4096
+  },
+  "windows_spawn_resource_policy": {
+    "num_workers": 8,
+    "materialize_smoke_subset_in_main_process": true,
+    "materialization_workers": 0,
+    "detector_cache_in_workers": false,
+    "training_shard_io_in_workers": false,
+    "persistent_workers": false,
+    "prefetch_factor": 1,
+    "worker_cpu_threads": 1
+  },
+  "detector_missingness_policy": {
+    "primary_metric_cohort": "paired_common_detection",
+    "same_sample_cohort_across_arms_and_detectors": true,
+    "exclude_only_if_any_detector_failed_or_nonfinite": true,
+    "report_detection_coverage_separately": true,
+    "ground_truth_imputation_for_detector_failures": false
+  },
+  "b1_gate": {
+    "require_phase9c_a_pass": true,
+    "require_phase9c_b0_pass": true,
+    "require_worker_lock_8": true,
+    "require_four_arms_present": true,
+    "require_matched_detector_eval": true,
+    "require_cross_detector_eval": true,
+    "require_paired_common_detection_cohort": true,
+    "require_detection_coverage_accounting": true,
+    "require_finite_metrics": true,
+    "pass_decision": "READY_FOR_PHASE9C_B2_FULL_MULTISPLIT_MULTISEED_TRAINING",
+    "fail_decision": "REPAIR_PHASE9C_B1_BEFORE_FULL_TRAINING"
+  }
+}
