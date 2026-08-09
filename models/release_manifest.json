@@ -43,6 +43,11 @@
       "file": "checkpoints_OVR_yolo11l.zip",
       "sha256": "c615ebc84638403c3483372421b16d56358c3bfddd8c25c34e6f6227681a4cc9",
       "size_bytes": 11010659
+    },
+    {
+      "file": "learned_calibration_artifacts.zip",
+      "sha256": "884dd359e961498f858087463a335a6e81ce17564eaa126bca42067dd9af5528",
+      "size_bytes": 6248665
     }
   ]
 }
