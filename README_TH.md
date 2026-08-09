@@ -1,27 +1,56 @@
-# คู่มือเตรียม GitHub สำหรับงาน RCVV-Pose
+# คู่มือ RCVV-Pose Reproducibility Package
 
-แพ็กเกจนี้จัดโครงสร้างให้ Reviewer ตรวจได้ 3 ระดับ: ตรวจหลักฐานโดยไม่ใช้ dataset, รัน Official TS1--TS6 จาก checkpoint ที่ล็อกไว้ และ train ใหม่ครบทุก split/seed/detector/arm
+Repository นี้รวบรวม source code, locked config, reviewer evidence, run provenance และ manifest ของ checkpoint 72 ชุดสำหรับบทความ `information-4512788` แล้ว ส่วน checkpoint และ learned calibration artifacts จะแจกจ่ายเป็น GitHub Release assets เพื่อไม่ให้ binary ขนาดใหญ่เข้า Git history
 
-ขณะนี้ใส่หลักฐานที่แนบมาแล้ว แต่ยัง **ไม่ใช่ repository ที่ reproduce ได้สมบูรณ์** เพราะยังขาด source code, config ที่โปรแกรมอ่านได้, calibration artifacts, detector cache และ checkpoint จากเครื่อง `D:\Research\vv_pose_project`
+## ตรวจแพ็กเกจแบบไม่ใช้ Dataset
 
-ขั้นตอนบนเครื่อง Windows:
+```powershell
+python tools\validate_evidence.py
+python -m unittest discover -s tests -v
+python tools\release_preflight.py --mode evidence
+```
 
-1. แตก ZIP นี้ไว้นอกโฟลเดอร์ dataset
-2. เปิด [`LOCAL_FILES_TO_ADD.md`](LOCAL_FILES_TO_ADD.md) และคัดลอกไฟล์ตามรายการ
-3. เติม `source_path` ใน `models/local_checkpoint_map.csv`
-4. รัน `powershell -ExecutionPolicy Bypass -File tools/import_checkpoints.ps1 -MapCsv models/local_checkpoint_map.csv`
-5. รัน `python tools/release_preflight.py --mode release`
-6. แก้ทุก `MISSING` หรือ `PLACEHOLDER` จนผ่าน
-7. สร้าง GitHub repository แบบ Private ก่อน แล้วให้ผู้เขียนร่วมตรวจ
-8. Commit source/evidence/config; checkpoint ให้เผยแพร่เป็น GitHub Release assets ไม่ใส่ Git history ปกติ
+## สร้างไฟล์สำหรับ GitHub Release
 
-นอกจาก checkpoint ให้คัดลอก `run_report.json`, `training_history.csv`, metric rows และ artifact-hash manifest ของ locked run ทั้ง 72 ชุดด้วย เพราะเป็นหลักฐานการ train จริงที่ Reviewer ตรวจได้โดยไม่ต้อง train ใหม่ทั้งหมด
+วาง checkpoint 72 ชุดตาม `models\checkpoint_manifest.csv` และตรวจว่ามี:
 
-ห้ามอัปโหลด:
+- `artifacts\calibration\` สำหรับ calibration files
+- `local_release_inputs\learned_artifacts\phase9c_a_residual_bank.npz`
 
-- MPI-INF-3DHP RGB, annotations หรือ archive ต้นฉบับ
-- absolute path, username, token, API key หรือ credential
-- `venv`, cache, log, temporary shards และไฟล์ทดลองที่ไม่อยู่ใน locked protocol
-- checkpoint ที่ไม่ทราบ split/seed/detector/arm หรือไม่มี SHA-256
+จากนั้นรัน:
 
-ไฟล์ `models/checkpoint_manifest.csv` ระบุปลายทางมาตรฐานของ checkpoint ทั้ง 72 ชุด ส่วน `models/local_checkpoint_map.csv` ใช้กรอกตำแหน่งต้นฉบับจริงบนเครื่องคุณ
+```powershell
+python tools\build_model_archives.py `
+  --checkpoint-root checkpoints `
+  --output-dir release_assets
+
+python tools\release_preflight.py --mode release
+```
+
+ผลที่ถูกต้องคือ:
+
+```text
+PASS: release assets are ready for GitHub upload.
+```
+
+ระบบต้องสร้าง ZIP 9 ไฟล์ ได้แก่ checkpoint 8 กลุ่ม และ `learned_calibration_artifacts.zip` พร้อมบันทึกขนาดและ SHA-256 จริงลงใน `models\release_manifest.json`
+
+หลังสร้าง GitHub Release แล้ว ให้รัน:
+
+```powershell
+python tools\build_model_archives.py `
+  --checkpoint-root checkpoints `
+  --output-dir release_assets `
+  --release-url "https://github.com/EDENASINC/RCVV-Pose-Reproducibility/releases/tag/v1.0.0-paper-information-4512788"
+
+python tools\release_preflight.py --mode published
+```
+
+## สิ่งที่ไม่แจกจ่าย
+
+- MPI-INF-3DHP dataset, RGB, video และ annotations
+- detector weights ของบุคคลที่สาม
+- cache และ derived Official NPZ ที่อาจอยู่ภายใต้เงื่อนไขของ dataset
+- path เฉพาะเครื่อง, token, API key และ credential
+
+ผู้ใช้ต้องดาวน์โหลด MPI-INF-3DHP และ detector weights จากผู้ให้บริการต้นทางและปฏิบัติตามเงื่อนไขของแต่ละรายการ

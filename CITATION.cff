@@ -8,8 +8,9 @@ authors:
   - family-names: Theeramunkong
     given-names: Thanaruk
 version: 1.0.0
-date-released: 2026-08-09
-repository-code: "https://github.com/OWNER/rcvv-pose"
+date-released: 2026-08-10
+repository-code: "https://github.com/EDENASINC/RCVV-Pose-Reproducibility"
+license: MIT
 preferred-citation:
   type: article
   title: "Reliability-Conditioned Virtual-View Pose Fusion for Monocular 3D Human Pose Estimation with Real 2D Detector Inputs"

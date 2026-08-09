@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check evidence-only or complete release readiness."""
+"""Check evidence-only, local-release, or published-release readiness."""
 
 from __future__ import annotations
 
@@ -9,9 +9,15 @@ import hashlib
 import json
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+EXPECTED_RELEASE_ASSETS = {
+    f"checkpoints_{arm}_{detector}.zip"
+    for arm in ("O", "OV", "OR", "OVR")
+    for detector in ("rtmpose", "yolo11l")
+} | {"learned_calibration_artifacts.zip"}
 
 
 def fail(message: str, errors: list[str]) -> None:
@@ -20,18 +26,16 @@ def fail(message: str, errors: list[str]) -> None:
 
 
 def sha256(path: Path) -> str:
-    h = hashlib.sha256()
+    digest = hashlib.sha256()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--mode", choices=("evidence", "release", "published"), default="release"
-    )
+    parser.add_argument("--mode", choices=("evidence", "release", "published"), default="release")
     args = parser.parse_args()
 
     validation = subprocess.run(
@@ -81,13 +85,22 @@ def main() -> int:
         fail(f"valid model release manifest ({exc})", errors)
         release_manifest = {}
 
-    expected_statuses = {"READY_FOR_UPLOAD", "PUBLISHED"}
-    if release_manifest.get("status") not in expected_statuses:
-        fail("model release manifest generated from the eight local assets", errors)
+    if release_manifest.get("status") not in {"READY_FOR_UPLOAD", "PUBLISHED"}:
+        fail("release manifest generated from the nine local ZIP assets", errors)
     assets = release_manifest.get("assets")
-    if not isinstance(assets, list) or len(assets) != 8:
-        fail("exactly 8 model release assets in models/release_manifest.json", errors)
+    if not isinstance(assets, list):
+        fail("release asset list in models/release_manifest.json", errors)
         assets = []
+    names = {
+        asset.get("file", "")
+        for asset in assets
+        if isinstance(asset, dict)
+    }
+    if len(assets) != 9 or names != EXPECTED_RELEASE_ASSETS:
+        missing = sorted(EXPECTED_RELEASE_ASSETS - names)
+        extra = sorted(names - EXPECTED_RELEASE_ASSETS)
+        fail(f"exactly 9 expected release assets (missing={missing}, extra={extra})", errors)
+
     for asset in assets:
         name = asset.get("file", "") if isinstance(asset, dict) else ""
         path = ROOT / "release_assets" / name
@@ -99,14 +112,26 @@ def main() -> int:
         if sha256(path) != asset.get("sha256"):
             fail(f"matching SHA-256 for release asset {name}", errors)
 
+    learned = ROOT / "release_assets" / "learned_calibration_artifacts.zip"
+    if learned.is_file():
+        try:
+            with zipfile.ZipFile(learned) as archive:
+                members = set(archive.namelist())
+            if "artifacts/learned/phase9c_a_residual_bank.npz" not in members:
+                fail("residual-risk bank inside learned_calibration_artifacts.zip", errors)
+            if not any(name.startswith("artifacts/calibration/") for name in members):
+                fail("calibration files inside learned_calibration_artifacts.zip", errors)
+        except zipfile.BadZipFile:
+            fail("valid learned_calibration_artifacts.zip", errors)
+
     if args.mode == "published":
         if release_manifest.get("status") != "PUBLISHED":
             fail("release manifest status PUBLISHED", errors)
-        if not str(release_manifest.get("release_url", "")).startswith("https://github.com/"):
-            fail("GitHub release URL in models/release_manifest.json", errors)
+        expected_prefix = "https://github.com/EDENASINC/RCVV-Pose-Reproducibility/releases/tag/"
+        if not str(release_manifest.get("release_url", "")).startswith(expected_prefix):
+            fail("repository-specific GitHub Release URL in models/release_manifest.json", errors)
 
-    forbidden_roots = (ROOT / "data", ROOT / "datasets")
-    for forbidden in forbidden_roots:
+    for forbidden in (ROOT / "data", ROOT / "datasets"):
         if forbidden.exists() and any(forbidden.rglob("*")):
             errors.append(f"FORBIDDEN: dataset content present under {forbidden.relative_to(ROOT)}")
 

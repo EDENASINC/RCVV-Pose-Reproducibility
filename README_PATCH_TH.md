@@ -1,48 +1,40 @@
-# แพตช์ขั้นสร้าง Model Release
+# ขั้นสร้าง GitHub Release Assets
 
-แพตช์นี้แก้กรณี `release_preflight.py --mode release` แจ้งว่า
-`published model release manifest without PLACEHOLDER` หลังรวบรวม checkpoint ครบแล้ว
+ตัวสร้าง Release จัดทำไฟล์ ZIP ทั้งหมด 9 ไฟล์และอัปเดต `models\release_manifest.json` อัตโนมัติ
 
-## ติดตั้ง
+## ไฟล์ต้นทางที่ต้องมี
 
-แตก ZIP แล้วคัดลอกไฟล์ทั้งหมดไปวางทับที่:
+- checkpoint 72 ชุดภายใต้ `checkpoints\` ตาม `models\checkpoint_manifest.csv`
+- calibration files ภายใต้ `artifacts\calibration\`
+- `local_release_inputs\learned_artifacts\phase9c_a_residual_bank.npz`
 
-`D:\Research\rcvv_pose_reproducibility_package`
-
-โครงสร้าง `tools/` ต้องคงเดิม
-
-## เตรียมไฟล์สำหรับ GitHub Release
-
-ดับเบิลคลิก:
-
-`RUN_PREPARE_MODEL_RELEASE.bat`
-
-หรือรัน:
+## สร้างและตรวจ
 
 ```powershell
-python tools\build_model_archives.py --checkpoint-root checkpoints --output-dir release_assets
+python tools\build_model_archives.py `
+  --checkpoint-root checkpoints `
+  --output-dir release_assets
+
 python tools\release_preflight.py --mode release
 ```
 
-ผลที่ถูกต้องคือ:
+ต้องได้:
 
-`PASS: release assets are ready for GitHub upload.`
+```text
+PASS: release assets are ready for GitHub upload.
+```
 
-จากนั้นอัปโหลด ZIP ทั้ง 8 ไฟล์ใน `release_assets` พร้อม
-`release_assets.generated.json` และ `models/checkpoint_manifest.csv` ไปยัง GitHub Release
+อัปโหลด ZIP 9 ไฟล์ใน `release_assets\` พร้อม `release_assets.generated.json` และ `models\checkpoint_manifest.csv` ไปยัง GitHub Release
 
 ## ยืนยันหลังเผยแพร่
-
-แทน `YOUR_USERNAME` ด้วยชื่อบัญชีจริง แล้วรัน:
 
 ```powershell
 python tools\build_model_archives.py `
   --checkpoint-root checkpoints `
   --output-dir release_assets `
-  --release-url "https://github.com/YOUR_USERNAME/rcvv-pose/releases/tag/v1.0.0-paper-information-4512788"
+  --release-url "https://github.com/EDENASINC/RCVV-Pose-Reproducibility/releases/tag/v1.0.0-paper-information-4512788"
+
 python tools\release_preflight.py --mode published
 ```
 
-ผลขั้นสุดท้ายต้องเป็น:
-
-`PASS: published release contract is complete.`
+ผลขั้นสุดท้ายต้องเป็น `PASS: published release contract is complete.`

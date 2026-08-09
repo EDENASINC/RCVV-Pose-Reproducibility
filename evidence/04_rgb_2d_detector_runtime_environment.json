@@ -45,7 +45,7 @@
       "new_samples_per_second": 14.963047032992916,
       "model_files": [
         {
-          "path": "D:\\Research\\vv_pose_project\\yolo11l-pose.pt",
+          "path": "${PROJECT_ROOT}/yolo11l-pose.pt",
           "sha256": "61921abe1f2ed930bf28328a16b3162278cdb239a1e8280b6ac827119f13cee0"
         }
       ],

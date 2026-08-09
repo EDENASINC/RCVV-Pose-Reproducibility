@@ -2,18 +2,23 @@
 
 ## Included and validated
 
-- Sixteen supplied evidence/index files, renamed canonically from `00` through `15`.
-- Locked protocols for detector audit, leakage-safe calibration, development factorial training, attribution, and Official TS1--TS6 evaluation.
-- Generated 72-row checkpoint inventory for 3 splits × 3 seeds × 2 detectors × 4 arms.
-- Evidence audit, release preflight, SHA-256 locator, checkpoint import, archive builder, tests, and GitHub Actions workflow.
-- Reviewer-facing English README and Thai author handoff instructions.
+- Locked reviewer evidence files `00` through `17` and `20`.
+- Source code and executable configurations for detector audit, calibration, factorial training, QC, and locked Official evaluation.
+- Training histories and run reports for the locked development matrix.
+- A 72-row checkpoint inventory covering 3 splits × 3 seeds × 2 detectors × 4 arms.
+- Evidence validation, release preflight, checkpoint import, archive builder, tests, and GitHub Actions audit.
+- Eight checkpoint archives prepared locally and recorded by SHA-256.
 
-## Deliberately not claimed as complete
+## Distributed separately as Release assets
 
-- Original Python implementation was not supplied.
-- The 72 checkpoint files and their exact local paths/hashes were not supplied.
-- Executable runtime configs, six calibrators, six residual-risk banks, and exact RTMPose model identities were not supplied.
-- Evidence files numbered `16` through `20` in the evidence index were not supplied.
-- The exact complete Python environment was not supplied; the requirements file is a staging reference only.
+- 72 validation-selected checkpoint files grouped into eight ZIP archives.
+- Calibration models and the residual-risk bank grouped as `learned_calibration_artifacts.zip`.
 
-The package is therefore ready for **evidence review and local completion**, but must not yet be advertised as a fully reproducible public release.
+## Deliberately excluded
+
+- MPI-INF-3DHP RGB, videos, annotations, and original archives.
+- Third-party detector weights.
+- Official-derived prediction and 2D-keypoint NPZ files numbered `18` and `19`; these can be regenerated locally after obtaining the dataset.
+- Machine-specific paths, local collection reports, caches, and credentials.
+
+The evidence-only contract is directly auditable from Git. Full evaluation additionally requires the official dataset, third-party detector weights or an authorized cache, and the nine versioned Release ZIP files.
