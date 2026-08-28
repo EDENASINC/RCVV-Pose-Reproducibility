@@ -73,6 +73,14 @@ The builder records the exact size and SHA-256 of every archive in `models/relea
 
 Third-party detector weights are not redistributed; obtain them from their official providers and verify the recorded hashes.
 
+<!-- Q2A_RELEASE_METADATA_BEGIN -->
+### Public release status
+
+The frozen checkpoint and calibration archives are published at [v1.0.0-paper-information-4512788](https://github.com/EDENASINC/RCVV-Pose-Reproducibility/releases/tag/v1.0.0-paper-information-4512788).
+The associated manuscript, `information-4512788`, is currently under review. This
+software release does not claim that the article has been accepted or published.
+<!-- Q2A_RELEASE_METADATA_END -->
+
 ## Repository map
 
 ```text

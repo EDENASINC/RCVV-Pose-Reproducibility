@@ -1,5 +1,13 @@
 # Package status
 
+<!-- Q2A_RELEASE_METADATA_BEGIN -->
+## Public release status
+
+The nine frozen checkpoint and calibration archives are published at
+[v1.0.0-paper-information-4512788](https://github.com/EDENASINC/RCVV-Pose-Reproducibility/releases/tag/v1.0.0-paper-information-4512788). The associated manuscript `information-4512788`
+is under review; the public release is not a claim of article acceptance or publication.
+<!-- Q2A_RELEASE_METADATA_END -->
+
 ## Included and validated
 
 - Locked reviewer evidence files `00` through `17` and `20`.

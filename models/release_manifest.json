@@ -1,8 +1,8 @@
 {
-  "status": "READY_FOR_UPLOAD",
+  "status": "PUBLISHED",
   "paper_manuscript_id": "information-4512788",
   "release_tag": "v1.0.0-paper-information-4512788",
-  "release_url": "",
+  "release_url": "https://github.com/EDENASINC/RCVV-Pose-Reproducibility/releases/tag/v1.0.0-paper-information-4512788",
   "assets": [
     {
       "file": "checkpoints_O_rtmpose.zip",
@@ -49,5 +49,6 @@
       "sha256": "884dd359e961498f858087463a335a6e81ce17564eaa126bca42067dd9af5528",
       "size_bytes": 6248665
     }
-  ]
+  ],
+  "release_published_at_utc": "2026-08-09T19:17:43Z"
 }
